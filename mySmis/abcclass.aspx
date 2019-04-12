@@ -31,14 +31,14 @@
             <div id="divClasses" runat="server" visible="false" class="appWorkspace">
                 <table style="width: 80%;">
                     <tr>
-                        <td class="table_tr_left" >&nbsp; asjcjasdjdfffffcc</td>
+                        <td class="table_tr_left" >&nbsp;</td>
                         <td class="table_tr_right">
                             <dx:ASPxTextBox ID="txtId" runat="server" Visible="False" Width="50px" Text="0">
                             </dx:ASPxTextBox>
                         </td>
                     </tr>
                     <tr>
-                        <td class="table_tr_left">School/Department :</td>
+                        <td class="table_tr_left">School/Department/Class :</td>
                         <td class="table_tr_right">
 
                             <dx:ASPxComboBox TextField="ModuleName" DisplayFormatString="{0}" NullText="Choose..." TextFormatString="{0}" ValueField="ModuleID" ID="cmbProgram" runat="server" Width="100%" ValueType="System.Int32">
