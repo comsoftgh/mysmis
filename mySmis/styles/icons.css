@@ -1,0 +1,165 @@
+@charset "utf-8";
+.icon_tithe {
+	height: 60px;
+	width: 60px;
+	background-image: url(../images/icon_members.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.icon_settings {
+	height: 60px;
+	width: 60px;
+	background-image: url(../images/icon_settings.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.icon_group {
+	height: 60px;
+	width: 60px;
+	background-image: url(../images/icon_group.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.icon_members {
+	height: 60px;
+	width: 60px;
+	background-image: url(../images/icon_members.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.icon_member {	
+	height: 60px;
+	width: 60px;
+	background-image: url(../images/icon_member.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.icon_family {
+	height: 60px;
+	width: 60px;
+	background-image: url(../images/icon_family.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.homemenu {
+	min-width: 400px;
+	height: 280px;
+	margin-right: auto;
+	margin-left: auto;
+	clear: none;
+	padding-top: 50px;
+    max-width:700px;
+}
+.homemenu .menuitem{
+	margin: 10px;
+	float: left;
+	height: 120px;
+	width: 150px;
+}
+.homemenu .menuitem a {
+	color: #000;
+	text-decoration: none;
+}
+
+
+.homemenu .menuitem .logo {
+	height: 100px;
+	width: 100px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+.homemenu .menuitem .mnu_members  {
+	height: 100px;
+	width: 100px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	background-image: url(../images/mnu_members.png);
+	background-repeat: no-repeat;
+    
+}
+
+.homemenu .menuitem .mnu_newmember  {
+	height: 100px;
+	width: 100px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	background-image: url(../images/mnu_newmember.png);
+	background-repeat: no-repeat;
+}
+.homemenu .menuitem .mnu_covfamreport  {
+	height: 100px;
+	width: 100px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	background-image: url(../images/mnu_covfamreport.png);
+	background-repeat: no-repeat;
+}
+.homemenu .menuitem .mnu_tithe {
+	height: 100px;
+	width: 100px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	background-image: url(../images/mnu_tithe.png);
+	background-repeat: no-repeat;
+}
+.homemenu .menuitem .mnu_tithestmt {
+	height: 100px;
+	width: 100px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	background-image: url(../images/mnu_tithestmt.png);
+	background-repeat: no-repeat;
+}
+.homemenu .menuitem .mnu_visitor {
+	height: 100px;
+	width: 100px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	background-image: url(../images/mnu_visitor.png);
+	background-repeat: no-repeat;
+}
+.homemenu .menuitem .mnu_covfamily {
+	height: 100px;
+	width: 100px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	background-image: url(../images/mnu_covfamily.png);
+	background-repeat: no-repeat;
+}
+.homemenu .menuitem .mnu_user {
+	height: 100px;
+	width: 100px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	background-image: url(../images/mnu_user.png);
+	background-repeat: no-repeat;
+}
+.homemenu .menuitem .mnu_group {
+	height: 100px;
+	width: 100px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	background-image: url(../images/mnu_group.png);
+	background-repeat: no-repeat;
+}
+
+.homemenu .menuitem .label {
+	height: 15px;
+	width: 100px;
+	margin-right: auto;
+	vertical-align: bottom;
+	
+	text-align: center;
+	margin-top: 5px;
+}

@@ -1,0 +1,436 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="main.master.cs" Inherits="mySmis.main" %>
+
+<%@ Register Assembly="DevExpress.Web.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
+<!DOCTYPE html>
+
+<html>
+<head id="Head2" runat="server">
+    <link href="content/Site.css" rel="stylesheet" />
+    <title></title>
+    <link href="styles/global.css" rel="stylesheet" />
+    <link href="styles/icons.css" rel="stylesheet" />
+    <link href="~/images/mysmislogo_icon.ico" rel="icon" />
+    <link rel="stylesheet" href="styles/uikit/css/uikit.gradient.min.css" />
+    <script src="styles/jquery-1.11.0.min.js"></script>
+    <script src="styles/uikit/js/uikit.min.js"></script>
+    <script src="Scripts/jquery-1.6.4-vsdoc.js"></script>
+    <script src="Scripts/jquery-1.6.4.js"></script>
+    <script src="Scripts/jquery-1.6.4.min.js"></script>
+    <script src="Scripts/toastr.js"></script>
+    <script src="Scripts/toastr.min.js"></script>
+    <link href="content/toastr.css" rel="stylesheet" />
+    <link href="content/toastr.min.css" rel="stylesheet" />
+    <script lang="javascript" type="text/javascript">
+        function Notify(msg, title, type, clear, pos, sticky) {
+
+            if (clear == true) {
+                toastr.clear();
+            }
+            if (sticky == true) {
+                toastr.tapToDismiss = true;
+                toastr.timeOut = 10000;
+            }
+
+            toastr.options.onclick = function () {
+                //alert('You can perform some custom action after a toast goes away');
+            }
+            //"toast-top-left";
+            toastr.options.positionClass = pos;
+            if (type.toLowerCase() == 'info') {
+                toastr.options.timeOut = 1000;
+                toastr.tapToDismiss = true;
+                toastr.info(msg, title);
+            }
+            if (type.toLowerCase() == 'success') {
+                toastr.options.timeOut = 1500;
+                toastr.success(msg, title);
+            }
+            if (type.toLowerCase() == 'warning') {
+                toastr.options.timeOut = 3000;
+                toastr.warning(msg, title);
+            }
+            if (type.toLowerCase() == 'error') {
+                toastr.options.timeOut = 10000;
+                toastr.error(msg, title);
+            }
+        }
+    </script>
+    <script src="Scripts/Demo.js"></script>
+
+</head>
+<body>
+    <form runat="server" id="form2" class="AspForm" enctype="multipart/form-data">
+        <table style="width: 100%; max-height: 600px; overflow-y:hidden;">
+            <tr>
+                <td style="width: 200px; vertical-align: top;">
+                    <div class="LayoutLeft" style="width: 205px; padding-left:10px;">
+                        <div class="Inner">
+                            <div class="Header">
+                                <div class="Buttons" style="padding-top:5px;">
+                                    <dx:ASPxImage ID="imgStaff" runat="server" ClientInstanceName="imgMember" Width="30px" Height="30px">
+                                        <EmptyImage Url="~/images/default-person.jpg">
+                                        </EmptyImage>
+                                        <Border BorderColor="#EAEAEA" BorderStyle="Solid" BorderWidth="1px" />
+                                    </dx:ASPxImage>
+                                    welcome! <dx:ASPxLabel Visible="true" runat="server" ID="lbStaffNames"></dx:ASPxLabel>
+                                </div>
+                            </div>
+                            <div class="Separator"></div>
+                            <div class="Navigation" style="margin-top: 10px; width: 205px">
+                                <dx:ASPxNavBar runat="server" ID="mMain" AllowSelectItem="True" EnableAnimation="True" AutoCollapse="True" Width="205px" >
+                                    <GroupHeaderStyle HorizontalAlign="Left" />
+                                    <ItemStyle HorizontalAlign="Left" />
+
+                                    <Groups>
+                                        <dx:NavBarGroup Name="mmDashboard" Text="Home" Expanded="true" NavigateUrl="~/home.aspx">
+                                            <HeaderImage IconID="navigation_home_16x16">
+                                            </HeaderImage>
+                                         </dx:NavBarGroup>
+                                        <dx:NavBarGroup Name="mmDashboard" Text="Dashboard" Expanded="false">
+                                            <HeaderImage IconID="dashboards_pielabelsdatalabels2_16x16">
+                                            </HeaderImage>
+                                            <Items>
+                                                <dx:NavBarItem Name="smFinancial" NavigateUrl="~/adminfeesrevenuedashboard.aspx" Text="Fees Revenue" ToolTip="Modules" Visible="false">
+                                                    <Image IconID="miscellaneous_currency_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Name="smAttendance" NavigateUrl="~/adminstudentpopulationdashboard.aspx" Text="Student Population" ToolTip="Programs" Visible="false">
+                                                    <Image IconID="toolboxitems_chart2_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Name="smAcademics" NavigateUrl="#" Text="Academics" ToolTip="Courses/Subjects" Visible="false">
+                                                    <Image IconID="data_selectdata_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                            </Items>
+                                        </dx:NavBarGroup>
+                                        <dx:NavBarGroup Name="mmModules" Text="Programme Management"  Visible="false" Expanded="False">
+                                            <HeaderImage IconID="businessobjects_bofolder_16x16">
+                                            </HeaderImage>
+                                            <Items>
+                                                <dx:NavBarItem Name="smModules" NavigateUrl="~/abcprogram.aspx" Text="School/Department" ToolTip="Modules" Visible="false">
+                                                    <Image IconID="programming_project_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Name="smPrograms" NavigateUrl="~/abcclass.aspx" Text="Programme" ToolTip="Programs" Visible="false">
+                                                    <Image IconID="programming_projectdirectory_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Name="smCoursesSubject" NavigateUrl="~/abclesson.aspx" Text="Courses" ToolTip="Courses" Visible="false">
+                                                    <Image IconID="programming_projectfile_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                            </Items>
+                                        </dx:NavBarGroup>
+                                        <dx:NavBarGroup Name="mmBatch" Text="Batch Management" Visible="false" Expanded="False">
+                                            <HeaderImage IconID="scheduling_calendar_16x16">
+                                            </HeaderImage>
+                                            <Items>
+                                                <dx:NavBarItem Name="smBatchesScheduling" NavigateUrl="~/classScheduler.aspx" Text="Batches" Visible="false" ToolTip="Batch Scheduling" >
+                                                    <Image IconID="scheduling_timelineview_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Name="smCourseSubjTutorSchedule" NavigateUrl="~/lessoninstructor.aspx" Text="Tutor - Courses " Visible="false" >
+                                                    <Image IconID="scheduling_showworktimeonly_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Name="smCourseSubjSchedule" NavigateUrl="~/lessonsScheduler.aspx" Text="Course Schedules" Visible="false" >
+                                                    <Image IconID="scheduling_fullweekview_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem NavigateUrl="~/lessontimetable.aspx" Name="smCourseSubjectTimetable" Text="Timetable" Visible="false">
+                                                    <Image IconID="scheduling_today_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Name="smExamsScheduling" NavigateUrl="~/examinationscheduling.aspx" Text="Examination Schedules" Visible="False">
+                                                    <Image IconID="scheduling_calendar_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Name="smExamsTimetable" NavigateUrl="~/examstimetable.aspx" Text="Examination Timetable" Visible="False">
+                                                    <Image IconID="scheduling_switchtimescalesto_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                            </Items>
+                                        </dx:NavBarGroup>
+                                        <dx:NavBarGroup Name="mmStudents" Text="Student Management" Expanded="False" Visible="False">
+                                            <HeaderImage IconID="people_usergroup_16x16">
+                                            </HeaderImage>
+                                            <Items>
+                                                <dx:NavBarItem Name="smNewstudent" NavigateUrl="~/studentnew.aspx" Text="New Student" Visible="false">
+                                                    <Image IconID="people_customer_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Name="smListStudent" Text="Student List" NavigateUrl="~/studentlist.aspx" Visible="false">
+                                                    <Image IconID="people_usergroup_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+
+                                            </Items>
+                                        </dx:NavBarGroup>
+                                        <dx:NavBarGroup Text="Staff Management" Name="mmStaff" Expanded="false" Visible="false" >
+                                            <HeaderImage IconID="businessobjects_bocustomer_16x16">
+                                            </HeaderImage>
+                                            <Items>
+                                                <dx:NavBarItem NavigateUrl="~/trainingtutors.aspx" Name="smNewStaff"  Text="New Staff" Visible="false">
+                                                    <Image IconID="businessobjects_boperson_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Text="Staff List" NavigateUrl="~/teachingstafflist.aspx" Name="smStaffList" Visible="false">
+                                                    <Image IconID="businessobjects_boresume_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                            </Items>
+                                        </dx:NavBarGroup>
+                                  
+                                        <dx:NavBarGroup Expanded="False" Name="mmAcademic" Text="Academics Management" Visible="false" >
+                                            <HeaderImage IconID="businessobjects_bochangehistory_16x16">
+                                            </HeaderImage>
+                                            <Items>
+                                                <dx:NavBarItem NavigateUrl="~/batchmangemment.aspx" Name="smManageBatches" Text="Manage Batches" Visible="false">
+                                                    <Image IconID="scheduling_cellsautoheight_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem NavigateUrl="~/studentregistration.aspx" Name="smStudentReg" Text="Student Batch Registration" Visible="false">
+                                                    <Image IconID="businessobjects_boresume_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem NavigateUrl="~/academicattendance.aspx" Name="smStudentAttend" Text="Student Attendance" Visible="false">
+                                                    <Image IconID="scheduling_groupbydate_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Text="Interim Assessment" NavigateUrl="~/academicsinterimassessment.aspx" Name="smIterimAssessment" Visible="false">
+                                                    <Image IconID="businessobjects_boreport_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Text="Exams Assessment" NavigateUrl="~/academicsexams.aspx" Name="smExamsAssessment" Visible="false">
+                                                    <Image IconID="businessobjects_boreport2_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Text="Student Transcripts" NavigateUrl="~/academicstranscripts.aspx" Name="smStudentTranscript" Visible="false">
+                                                    <Image IconID="edit_paste_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                            </Items>
+                                        </dx:NavBarGroup>    
+                                        <dx:NavBarGroup Expanded="False" Text="Fees Management" Name="mmFees" Visible="false">
+                                            <HeaderImage IconID="numberformats_accounting_16x16">
+                                            </HeaderImage>
+                                            <Items>
+                                                <dx:NavBarItem Text="Fees Category" Name="smFeeCategory" NavigateUrl="~/feescategory.aspx" Visible="false">
+                                                    <Image IconID="businessobjects_bonote_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Text="Fees Schedule" NavigateUrl="~/feesshedules.aspx" Name="smFeesSchedule" Visible="false">
+                                                    <Image IconID="businessobjects_boreport_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Text="Student Fees" NavigateUrl="~/feesstudent.aspx" Name="smStudentFees" Visible="false">
+                                                    <Image IconID="businessobjects_boresume_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Text="Fees Payment" NavigateUrl="~/feespayment.aspx" Name="smFeesPayment" Visible="false">
+                                                    <Image IconID="businessobjects_bosale_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Text="Payment List" NavigateUrl="~/feespaymentlist.aspx" Name="smPaymentList" Visible="false">
+                                                    <Image IconID="businessobjects_bosaleitem_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Text="Cheque Reconciliation" NavigateUrl="~/feeschequeconciliation.aspx" Name="smChequeReconcil" Visible="false">
+                                                    <Image IconID="functionlibrary_financial_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                            </Items>
+                                        </dx:NavBarGroup>
+                                        <dx:NavBarGroup Text="Facility Management" Visible="False" Expanded="false" Name="mmFacility">
+                                            <HeaderImage IconID="dashboards_initialstate_16x16">
+                                            </HeaderImage>
+                                            <Items>
+                                                <dx:NavBarItem Name="smLectureHalls" NavigateUrl="~/lectureblocks.aspx" Text="Sch. Blocks/Lecture Halls" Visible="False">
+                                                    <Image IconID="navigation_documentmap_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                            </Items>
+                                        </dx:NavBarGroup>
+                                        <dx:NavBarGroup Expanded="False" Text="Events Management" Name="mmEvents" Visible="false">
+                                            <HeaderImage IconID="scheduling_monthview_16x16">
+                                            </HeaderImage>
+                                            <Items>
+                                                <dx:NavBarItem Text="Meetings " Visible="false">
+                                                    <Image IconID="scheduling_dayview_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                            </Items>
+                                        </dx:NavBarGroup>
+                                        <dx:NavBarGroup Expanded="False" Text="Library Management" Name="mmLibrary" Visible="false">
+                                            <HeaderImage IconID="miscellaneous_content_16x16">
+                                            </HeaderImage>
+                                            <Items>
+                                                <dx:NavBarItem Text="Book Classification" Name="smBooksClassification" NavigateUrl="~/libbookclassification.aspx" Visible="false">
+                                                    <Image IconID="spreadsheet_namemanager_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Text="Book Search"> 
+                                                    <Image IconID="functionlibrary_lookupreference_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Text="Publishers" Name="smBookPublisher" NavigateUrl="~/libbookpublisher.aspx" Visible="false">
+                                                    <Image IconID="programming_projectfile_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Text="Authors" Name="smBookAuthor" NavigateUrl="~/libbookauthor.aspx" Visible="false">
+                                                    <Image IconID="functionlibrary_text_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Text="Book Cataloguing" NavigateUrl="libbookcataloguing.aspx" Visible="false" Name="smBookCataloguing">
+                                                    <Image IconID="functionlibrary_cube_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Text="Borrow Book" NavigateUrl="libbookborrow.aspx" Visible="false" Name="smBookBorrow">
+                                                    <Image IconID="people_assignto_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                            </Items>
+                                        </dx:NavBarGroup>
+                                        <dx:NavBarGroup Expanded="False" Text="User Management" Name="mmUsers" Visible="false">
+                                            <HeaderImage IconID="mode_touchmode_16x16">
+                                            </HeaderImage>
+                                            <Items>
+                                                <dx:NavBarItem NavigateUrl="~/users.aspx" Text="Staff Users" Name="smStaffUsers" Visible="false">
+                                                    <Image IconID="businessobjects_bocustomer_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Text="User Privillages" NavigateUrl="~/userprivillages.aspx" Name="smUserPrivillages" Visible="false">
+                                                    <Image IconID="businessobjects_boresume_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Text="Student User" NavigateUrl="~/usersstudent.aspx" Visible="false" Name="smStudentUser">
+                                                    <Image IconID="people_customer_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Text="Parent User" NavigateUrl="~/usersparent.aspx" Name="smParentUser" Visible="false">
+                                                    <Image IconID="businessobjects_boemployee_16x16">
+                                                    </Image>
+                                                    <Image IconID="businessobjects_bodepartment_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                            </Items>
+                                        </dx:NavBarGroup>
+                                        
+                                        <dx:NavBarGroup Expanded="False" Text="My Profile" Visible="False" >
+                                            <HeaderImage IconID="businessobjects_boresume_16x16">
+                                            </HeaderImage>
+                                            <Items>
+                                                <dx:NavBarItem NavigateUrl="~/myaccount.aspx" Text="Account" Name="smMyAccount">
+                                                    <Image IconID="people_employee_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Name="smMyAuditLog" NavigateUrl="~/myauditlog.aspx" Text="Audit Log">
+                                                    <Image IconID="support_article_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                            </Items>
+                                        </dx:NavBarGroup>
+                                        <dx:NavBarGroup Expanded="False" Text="System Configuration" Name="mmConfiguration" Visible="false" >
+                                            <HeaderImage IconID="setup_properties_16x16">
+                                            </HeaderImage>
+                                            <Items>
+                                                <dx:NavBarItem Text="General" NavigateUrl="~/settingsgeneral.aspx" Name="smGeneralConfig" Visible="false">
+                                                    <Image IconID="setup_loadpagesetup_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                               
+                                                <dx:NavBarItem Text="Student" NavigateUrl="~/settingsstudent.aspx" Name="smStudentConfig" Visible="false">
+                                                    <Image IconID="people_publicfix_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Text="Staff" NavigateUrl="~/settingstutor.aspx" Name="smStaffConfig" Visible="false">
+                                                    <Image IconID="businessobjects_bodetails_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                            </Items>
+                                        </dx:NavBarGroup>
+                                        <dx:NavBarGroup Expanded="False" Text="Archive Management" Name="mmArchive" Visible="false">
+                                            <HeaderImage IconID="functionlibrary_text_16x16">
+                                            </HeaderImage>
+                                            <Items>
+                                                <dx:NavBarItem Text="Book Classification" Name="smBooksClassification" NavigateUrl="~/libbookclassification.aspx" Visible="false">
+                                                    <Image IconID="spreadsheet_namemanager_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Text="Book Search"> 
+                                                    <Image IconID="functionlibrary_lookupreference_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Text="Publishers">
+                                                    <Image IconID="programming_projectfile_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Text="Authors">
+                                                    <Image IconID="functionlibrary_text_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Text="Book Cataloguing">
+                                                    <Image IconID="functionlibrary_cube_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                                <dx:NavBarItem Text="Borrow Book">
+                                                    <Image IconID="people_assignto_16x16">
+                                                    </Image>
+                                                </dx:NavBarItem>
+                                            </Items>
+                                        </dx:NavBarGroup>
+                                        <dx:NavBarGroup NavigateUrl="~/logout.aspx" Text="Logout" Visible="true">
+                                            <HeaderImage IconID="businessobjects_bopermission_16x16">
+                                            </HeaderImage>
+                                        </dx:NavBarGroup>
+                                        
+                                    </Groups>
+
+                                </dx:ASPxNavBar>
+                            </div>
+
+                            <div class="Separator"></div>
+                            <div class="LayoutLeft">
+                                <div class="FooterInner ">
+
+                                    <div class="Copyrights">
+                                        <img src="images/mySmis.png" />
+                                     &reg; Powered by <a href="http://www.comsoftgh.com" target="_blank" style="text-decoration: none;">Comsoft Solutions</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </td>
+                <td style="vertical-align: top; min-width: 100%;">
+                    <div class="LayoutRight" style="width: 99%;">
+                        <div class="Inner">
+                            <div class="Header" style="align-content:center; text-align:center;" >
+                               <div runat="server" style="word-wrap:hyphenate; align-content:center;font-size:medium;font-weight:bolder;padding:5px;" id="divSchName"></div>
+                                
+
+
+                            </div>
+                            <div class="Separator"></div>
+                            <div id="DemoArea">
+
+                                <asp:ContentPlaceHolder ID="ContentHolder" runat="server">
+                                    <div class="Separator Pagetitle">
+                                    </div>
+                                </asp:ContentPlaceHolder>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+

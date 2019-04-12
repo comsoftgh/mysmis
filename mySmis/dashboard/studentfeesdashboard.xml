@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="en-GB">
+  <Title Visible="false" Text="Dashboard" />
+  <DataSources>
+    <SqlDataSource ComponentName="dashboardSqlDataSource1">
+      <Name>SQL Data Source 1</Name>
+      <Connection Name="localhost_mysmisdb_Connection" ProviderKey="MySql">
+        <Parameters>
+          <Parameter Name="server" Value="localhost" />
+          <Parameter Name="database" Value="mysmisdb" />
+          <Parameter Name="read only" Value="1" />
+          <Parameter Name="generateConnectionHelper" Value="false" />
+          <Parameter Name="Port" Value="3306" />
+          <Parameter Name="userid" Value="" />
+          <Parameter Name="password" Value="" />
+        </Parameters>
+      </Connection>
+      <Query Type="CustomSqlQuery" Name="Query">
+        <Sql>SELECT
+studentcourses.id,
+studentcourses.moduleID,
+studentcourses.title,
+studentcourses.description,
+studentcourses.active,
+IFNULL(SUM(studentfees.feevalue),0.00) AS feevalue,
+(SELECT IFNULL(SUM(sfp.payvalue),0.00) FROM studentfeepayment as sfp WHERE sfp.batchid = studentcourses.id ) AS tfees,
+studentprograms.moduleName,
+studentcoursesschedule.term,
+studentcoursesschedule.academicyear
+FROM
+studentcourses
+LEFT OUTER JOIN studentfees ON studentcourses.id = studentfees.batchid
+INNER JOIN studentprograms ON studentcourses.moduleID = studentprograms.id
+INNER JOIN studentcoursesschedule ON studentcourses.id = studentcoursesschedule.classID
+GROUP BY
+studentcourses.id
+</Sql>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="SQL Data Source 1">
+          <View Name="Query">
+            <Field Name="id" Type="Int32" />
+            <Field Name="moduleID" Type="Int32" />
+            <Field Name="title" Type="String" />
+            <Field Name="description" Type="String" />
+            <Field Name="active" Type="Int32" />
+            <Field Name="feevalue" Type="Decimal" />
+            <Field Name="tfees" Type="Double" />
+            <Field Name="moduleName" Type="String" />
+            <Field Name="term" Type="String" />
+            <Field Name="academicyear" Type="String" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Gauge ComponentName="gaugeDashboardItem1" Name="Revenue Target and Actuals" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="Query">
+      <DataItems>
+        <Dimension DataMember="moduleName" UniqueName="DataItem2" />
+        <Measure DataMember="tfees" UniqueName="DataItem0" />
+        <Measure DataMember="feevalue" UniqueName="DataItem1" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem2" />
+      </SeriesDimensions>
+      <GaugeElement>
+        <ActualValue UniqueName="DataItem0" />
+        <TargetValue UniqueName="DataItem1" />
+      </GaugeElement>
+    </Gauge>
+    <Pivot ComponentName="pivotDashboardItem1" Name="Running Sum of Revenue Collected " Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="Query">
+      <DataItems>
+        <Measure DataMember="tfees" Name="Fees Collected" UniqueName="DataItem0">
+          <NumericFormat FormatType="Number" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+        <Dimension DataMember="moduleName" UniqueName="DataItem1" />
+        <Dimension DataMember="title" UniqueName="DataItem2" />
+        <Dimension DataMember="academicyear" UniqueName="DataItem3" />
+        <Dimension DataMember="term" UniqueName="DataItem4" />
+        <Measure DataMember="feevalue" Name="Fees Due" UniqueName="DataItem5">
+          <NumericFormat FormatType="Number" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+      </DataItems>
+      <Rows>
+        <Row UniqueName="DataItem1" />
+        <Row UniqueName="DataItem2" />
+        <Row UniqueName="DataItem3" />
+        <Row UniqueName="DataItem4" />
+      </Rows>
+      <Values>
+        <Value UniqueName="DataItem0" />
+        <Value UniqueName="DataItem5" />
+      </Values>
+    </Pivot>
+    <TreeView ComponentName="treeViewDashboardItem1" Name="Academic Batch Filter" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="Query">
+      <DataItems>
+        <Dimension DataMember="moduleName" UniqueName="DataItem0" />
+        <Dimension DataMember="title" UniqueName="DataItem1" />
+        <Dimension DataMember="academicyear" UniqueName="DataItem2" />
+        <Dimension DataMember="term" UniqueName="DataItem3" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension UniqueName="DataItem0" />
+        <Dimension UniqueName="DataItem1" />
+        <Dimension UniqueName="DataItem2" />
+        <Dimension UniqueName="DataItem3" />
+      </FilterDimensions>
+    </TreeView>
+    <Chart ComponentName="chartDashboardItem1" Name="Distribution Of Fees Revenue" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="Query" Rotated="true">
+      <DataItems>
+        <Measure DataMember="tfees" Name="Amount" UniqueName="DataItem0" />
+        <Dimension DataMember="title" UniqueName="DataItem2" />
+      </DataItems>
+      <Arguments>
+        <Argument UniqueName="DataItem2" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple>
+              <Value UniqueName="DataItem0" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+      <ChartLegend Visible="false" />
+    </Chart>
+    <Card ComponentName="cardDashboardItem1" Name="Fees Revenue Totals" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="Query">
+      <DataItems>
+        <Dimension DataMember="moduleName" UniqueName="DataItem0" />
+        <Measure DataMember="feevalue" UniqueName="DataItem1" />
+        <Measure DataMember="tfees" UniqueName="DataItem2">
+          <NumericFormat FormatType="Number" Unit="Ones" IncludeGroupSeparator="true" />
+        </Measure>
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem0" />
+      </SeriesDimensions>
+      <Card>
+        <ActualValue UniqueName="DataItem2" />
+        <TargetValue UniqueName="DataItem1" />
+      </Card>
+    </Card>
+  </Items>
+  <Groups>
+    <Group ComponentName="dashboardItemGroup1" Name="Group 1" ShowCaption="false" />
+  </Groups>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical">
+      <LayoutGroup Orientation="Vertical" DashboardItem="dashboardItemGroup1" Weight="100">
+        <LayoutGroup Weight="46.967071057192378">
+          <LayoutItem DashboardItem="treeViewDashboardItem1" Weight="20" />
+          <LayoutItem DashboardItem="gaugeDashboardItem1" Weight="80" />
+        </LayoutGroup>
+        <LayoutGroup Weight="53.032928942807622">
+          <LayoutItem DashboardItem="cardDashboardItem1" Weight="22.032085561497325" />
+          <LayoutItem DashboardItem="chartDashboardItem1" Weight="37.967914438502675" />
+          <LayoutItem DashboardItem="pivotDashboardItem1" Weight="40" />
+        </LayoutGroup>
+      </LayoutGroup>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

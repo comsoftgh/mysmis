@@ -1,0 +1,4 @@
+C:\Users\Kevin\documents\visual studio 2012\Projects\mySmis\mySmisRespond\bin\mySmisRespond.dll
+C:\Users\Kevin\documents\visual studio 2012\Projects\mySmis\mySmisRespond\bin\mySmisRespond.pdb
+C:\Users\Kevin\documents\visual studio 2012\Projects\mySmis\mySmisRespond\obj\Debug\mySmisRespond.dll
+C:\Users\Kevin\documents\visual studio 2012\Projects\mySmis\mySmisRespond\obj\Debug\mySmisRespond.pdb

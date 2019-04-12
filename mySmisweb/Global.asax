@@ -1,0 +1,1 @@
+<%@ Application Codebehind="Global.asax.cs" Inherits="mySmisweb.Global_asax" Language="C#" %>

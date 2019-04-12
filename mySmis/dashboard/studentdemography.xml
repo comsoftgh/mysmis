@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="en-GB">
+  <Title Visible="false" Text="Dashboard" />
+  <DataSources>
+    <SqlDataSource ComponentName="dashboardSqlDataSource1">
+      <Name>SQL Data Source 1</Name>
+      <Connection Name="localhost_mysmisdb_Connection" ProviderKey="MySql">
+        <Parameters>
+          <Parameter Name="server" Value="localhost" />
+          <Parameter Name="database" Value="mysmisdb" />
+          <Parameter Name="read only" Value="1" />
+          <Parameter Name="generateConnectionHelper" Value="false" />
+          <Parameter Name="Port" Value="3306" />
+          <Parameter Name="userid" Value="root" />
+          <Parameter Name="password" Value="@possible123" />
+        </Parameters>
+      </Connection>
+      <Query Type="CustomSqlQuery" Name="Query">
+        <Sql>SELECT
+students.gender,
+students.dob,
+students.religion,
+students.nationality,
+students.marital,
+(SELECT ag.lValue FROM agegroup as ag where DATEDIFF(NOW(),students.dob)/ 365.25 BETWEEN uplim AND lolim ) AS stuagegroup,
+(SELECT sc.academicyear FROM studentregistration as sr INNER JOIN studentcoursesschedule as sc ON sc.id = sr.batchid where sr.studuserid = students.userId ORDER BY sr.id DESC LIMIT 1 ) as academicyear,
+(SELECT sc.term FROM studentregistration as sr INNER JOIN studentcoursesschedule as sc ON sc.id = sr.batchid where sr.studuserid = students.userId ORDER BY sr.id DESC LIMIT 1 ) as term,
+(SELECT scs.title FROM studentregistration as sr INNER JOIN studentcoursesschedule as sc ON sc.id = sr.batchid INNER JOIN studentcourses as scs ON scs.id = sc.classID where sr.studuserid = students.userId ORDER BY sr.id DESC LIMIT 1 ) as title,
+(SELECT sp.moduleName FROM studentregistration as sr INNER JOIN studentcoursesschedule as sc ON sc.id = sr.batchid INNER JOIN studentcourses as scs ON scs.id = sc.classID INNER JOIN studentprograms as sp ON sp.id = scs.moduleID where sr.studuserid = students.userId ORDER BY sr.id DESC LIMIT 1 ) as moduleName
+FROM
+students
+INNER JOIN studentregistration ON students.userId = studentregistration.studuserid
+
+GROUP BY
+students.userId
+ORDER BY
+studentregistration.id DESC
+</Sql>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="SQL Data Source 1">
+          <View Name="Query">
+            <Field Name="gender" Type="String" />
+            <Field Name="dob" Type="DateTime" />
+            <Field Name="religion" Type="String" />
+            <Field Name="nationality" Type="String" />
+            <Field Name="marital" Type="String" />
+            <Field Name="stuagegroup" Type="String" />
+            <Field Name="academicyear" Type="String" />
+            <Field Name="term" Type="String" />
+            <Field Name="title" Type="String" />
+            <Field Name="moduleName" Type="String" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+    </SqlDataSource>
+    <SqlDataSource ComponentName="dashboardSqlDataSource2">
+      <Name>SQL Data Source 2</Name>
+      <Connection Name="localhost_mysmisdb_Connection" ProviderKey="MySql">
+        <Parameters>
+          <Parameter Name="server" Value="localhost" />
+          <Parameter Name="database" Value="mysmisdb" />
+          <Parameter Name="read only" Value="1" />
+          <Parameter Name="generateConnectionHelper" Value="false" />
+          <Parameter Name="Port" Value="3306" />
+        </Parameters>
+      </Connection>
+      <Query Type="CustomSqlQuery" Name="Query">
+        <Sql>SELECT agegroup.lKey,agegroup.lValue,(select SUM(CASE WHEN ROUND((DATEDIFF(Now(),students.dob))/365.25) BETWEEN agegroup.uplim AND agegroup.lolim THEN 1 ELSE 0 END ) FROM students) AS numAge FROM agegroup </Sql>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="SQL Data Source 2">
+          <View Name="Query">
+            <Field Name="lKey" Type="Int32" />
+            <Field Name="lValue" Type="String" />
+            <Field Name="numAge" Type="Decimal" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+    </SqlDataSource>
+    <SqlDataSource ComponentName="dashboardSqlDataSource3">
+      <Name>SQL Data Source 3</Name>
+      <Connection Name="localhost_mysmisdb_Connection" ProviderKey="MySql">
+        <Parameters>
+          <Parameter Name="server" Value="localhost" />
+          <Parameter Name="database" Value="mysmisdb" />
+          <Parameter Name="read only" Value="1" />
+          <Parameter Name="generateConnectionHelper" Value="false" />
+          <Parameter Name="Port" Value="3306" />
+        </Parameters>
+      </Connection>
+      <Query Type="CustomSqlQuery" Name="Query">
+        <Sql>SELECT students.userId,students.indexNo,students.title,students.fname,students.onames,students.sname,students.gender,students.dob,ROUND((DATEDIFF(Now(),students.dob))/365.25) AS age,(SELECT agegroup.lValue FROM agegroup WHERE ROUND((DATEDIFF(Now(),students.dob))/365.25) BETWEEN agegroup.uplim AND agegroup.lolim) AS agegp,students.religion,students.mobile,students.tel,students.email,students.nationality,students.postadd,students.resadd,students.marital,students.dateCreated,students.lastModified,students.admintiondate FROM students ;</Sql>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="SQL Data Source 3">
+          <View Name="Query">
+            <Field Name="userId" Type="String" />
+            <Field Name="indexNo" Type="String" />
+            <Field Name="title" Type="String" />
+            <Field Name="fname" Type="String" />
+            <Field Name="onames" Type="String" />
+            <Field Name="sname" Type="String" />
+            <Field Name="gender" Type="String" />
+            <Field Name="dob" Type="DateTime" />
+            <Field Name="age" Type="Decimal" />
+            <Field Name="agegp" Type="String" />
+            <Field Name="religion" Type="String" />
+            <Field Name="mobile" Type="String" />
+            <Field Name="tel" Type="String" />
+            <Field Name="email" Type="String" />
+            <Field Name="nationality" Type="String" />
+            <Field Name="postadd" Type="String" />
+            <Field Name="resadd" Type="String" />
+            <Field Name="marital" Type="String" />
+            <Field Name="dateCreated" Type="DateTime" />
+            <Field Name="lastModified" Type="DateTime" />
+            <Field Name="admintiondate" Type="DateTime" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <TreeView ComponentName="treeViewDashboardItem1" Name="School/Department Filter" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="Query" IsMasterFilterCrossDataSource="true">
+      <DataItems>
+        <Dimension DataMember="moduleName" UniqueName="DataItem0" />
+        <Dimension DataMember="title" UniqueName="DataItem1" />
+        <Dimension DataMember="academicyear" UniqueName="DataItem2" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension UniqueName="DataItem0" />
+        <Dimension UniqueName="DataItem1" />
+        <Dimension UniqueName="DataItem2" />
+      </FilterDimensions>
+    </TreeView>
+    <Pie ComponentName="pieDashboardItem2" Name="Student Population By Gender" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource2" DataMember="Query" LabelContentType="ArgumentValueAndPercent" ShowPieCaptions="false">
+      <DataItems>
+        <Measure DataMember="numAge" UniqueName="DataItem1">
+          <NumericFormat FormatType="Number" Precision="0" Unit="Ones" />
+        </Measure>
+        <Dimension DataMember="lValue" UniqueName="DataItem2" />
+      </DataItems>
+      <Arguments>
+        <Argument UniqueName="DataItem2" />
+      </Arguments>
+      <Values>
+        <Value UniqueName="DataItem1" />
+      </Values>
+    </Pie>
+    <Grid ComponentName="gridDashboardItem1" Name="Student Population by Age Group" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource2" DataMember="Query">
+      <DataItems>
+        <Dimension DataMember="lValue" Name="Age Group" UniqueName="DataItem0" />
+        <Measure DataMember="numAge" Name="Number of Students" UniqueName="DataItem1">
+          <NumericFormat FormatType="Number" Precision="0" Unit="Ones" />
+        </Measure>
+        <Measure DataMember="numAge" Name="Bar Graph" UniqueName="DataItem2" />
+      </DataItems>
+      <GridColumns>
+        <GridDimensionColumn Weight="57.434210526315788">
+          <Dimension UniqueName="DataItem0" />
+        </GridDimensionColumn>
+        <GridMeasureColumn Weight="63.94736842105263">
+          <Measure UniqueName="DataItem1" />
+        </GridMeasureColumn>
+        <GridMeasureColumn Weight="103.61842105263158" DisplayMode="Bar">
+          <Measure UniqueName="DataItem2" />
+        </GridMeasureColumn>
+      </GridColumns>
+      <GridOptions ColumnWidthMode="Manual" />
+    </Grid>
+    <Chart ComponentName="chartDashboardItem2" Name="Student Population By Age Group" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource2" DataMember="Query">
+      <ColoringOptions UseGlobalColors="false" />
+      <DataItems>
+        <Measure DataMember="numAge" Name="Number of Students" UniqueName="DataItem0" />
+        <Dimension DataMember="lValue" UniqueName="DataItem1" />
+        <Dimension DataMember="lValue" UniqueName="DataItem2" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem1" />
+      </SeriesDimensions>
+      <Arguments>
+        <Argument UniqueName="DataItem2" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Pane 1">
+          <Series>
+            <Simple>
+              <Value UniqueName="DataItem0" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+      <ChartLegend Visible="false" />
+      <AxisX TitleVisible="true" Title="Age Group" />
+    </Chart>
+    <Card ComponentName="cardDashboardItem1" Name="Total Student by Gender" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="Query">
+      <DataItems>
+        <Dimension DataMember="gender" UniqueName="DataItem0" />
+        <Measure DataMember="gender" SummaryType="Count" UniqueName="DataItem4" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem0" />
+      </SeriesDimensions>
+      <Card>
+        <ActualValue UniqueName="DataItem4" />
+      </Card>
+    </Card>
+    <Pie ComponentName="pieDashboardItem1" Name="Percentiles of Student Population by Gender" Group="dashboardItemGroup1" DataSource="dashboardSqlDataSource1" DataMember="Query" PieType="Donut" LabelContentType="ArgumentValueAndPercent" ShowPieCaptions="false">
+      <ColoringOptions UseGlobalColors="false" />
+      <DataItems>
+        <Measure DataMember="gender" SummaryType="Count" UniqueName="DataItem0" />
+        <Dimension DataMember="gender" UniqueName="DataItem4" />
+      </DataItems>
+      <Arguments>
+        <Argument UniqueName="DataItem4" />
+      </Arguments>
+      <Values>
+        <Value UniqueName="DataItem0" />
+      </Values>
+    </Pie>
+  </Items>
+  <Groups>
+    <Group ComponentName="dashboardItemGroup1" Name="Group 1" ShowCaption="false" />
+  </Groups>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical">
+      <LayoutGroup Orientation="Vertical" DashboardItem="dashboardItemGroup1" Weight="100">
+        <LayoutGroup Weight="51.99306759098787">
+          <LayoutItem DashboardItem="treeViewDashboardItem1" Weight="20" />
+          <LayoutItem DashboardItem="pieDashboardItem1" Weight="39.037433155080215" />
+          <LayoutItem DashboardItem="pieDashboardItem2" Weight="40.962566844919785" />
+        </LayoutGroup>
+        <LayoutGroup Weight="48.00693240901213">
+          <LayoutItem DashboardItem="cardDashboardItem1" Weight="20.962566844919785" />
+          <LayoutItem DashboardItem="gridDashboardItem1" Weight="38.074866310160431" />
+          <LayoutItem DashboardItem="chartDashboardItem2" Weight="40.962566844919785" />
+        </LayoutGroup>
+      </LayoutGroup>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

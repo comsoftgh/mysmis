@@ -1,0 +1,342 @@
+﻿@charset "utf-8";
+
+.title_div {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000;
+	height: 40px;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	background-color: #0094ff;
+}
+.title_div .cmis_logo{
+	margin: 0px;
+	padding: 0px;
+	height: 40px;
+	width: 175px;
+	float: left;
+	background-image: url(../images/mySmis_logo.jpg);
+    background-size: 90px 40px ;
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-color: #dc2121;
+}
+.title_div .titletext{
+	font-family: Helvetica, Arial, "Trebuchet MS",  sans-serif;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: bold;
+	float: left;
+	height: 22px;
+	width: 400px;
+	margin-top: 8px;
+}
+.title_div .poweredBy{
+	float: right;
+	height: 30px;
+	width: 120px;
+	text-align: right;
+}
+.title_div .topmenu{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	height: 35px;
+	width: auto;
+	float: right;
+	margin-top: 0px;
+	margin-right: 5px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding: 0px;
+	text-align: right;
+}
+.menu {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	height: 28px;
+	width: 100%;
+	background-color: #F0F0F0;
+	padding: 0px;
+	margin: 0px;
+}
+.menu .icon{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	padding: 0px;
+	height: 28px;
+	width: 200px;
+	float: left;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	background-image: none;
+	background-color: #0094ff;
+}
+
+.menu .submenu{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	height: 28px;
+	width: auto;
+	float: right;
+	padding: 0px;
+	text-align: right;
+	margin-top: 0px;
+	margin-right: 5px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	color: #000;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+.menu .submenu .item {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	height: 28px;
+	width: auto;
+	float: left;
+	text-align: right;
+	color: #000;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: solid;
+	border-left-color: #D6D6D6;
+	margin: 0px;
+	padding: 0px;
+}
+
+.menu .pagetitle{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: normal;
+	height: 18px;
+	width: auto;
+	float: left;
+	text-align: left;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 5px;
+	color: #000;
+	padding-top: 5px;
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+}
+
+.content {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000;
+	width: 100%;
+	overflow: visible;
+	background-color: #FFFFFF;
+	margin: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+.content  .left_strip{
+	float: left;
+	width: 200px;
+	overflow: hidden;
+	background-color: #F0F0F0;
+	margin-right: 0px;
+	margin-left: 0px;
+	height: 100%;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+.content  .right_content{
+	background-color: #FFF;
+	
+	padding-top: 10px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 205px;
+}
+
+.right_content {
+
+    min-height:100%;
+    overflow:hidden;
+    min-width:600px;
+
+    
+}
+
+.clear {
+	clear: both;
+}
+.footer {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: #666;
+	height: auto;
+	width: auto;
+	background-color: #D6D6D6;
+	padding-top: 5px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 10px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	float: left;
+    
+}
+.left_menu {
+	height: auto;
+	width: 190px;
+}
+.login_bg {
+	background-color: #dc2121;
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	width: 100%;
+	background-image: url(../images/cmis_logo_login_bg.png);
+	background-repeat: no-repeat;
+	background-position: left 0px;
+}
+.login_cmis_logo {
+	background-image: url(../images/mySmis_logo.jpg);
+    background-size: 200px 140px ;
+	height: 140px;
+	width: 200px;
+	margin-top: 50px;
+	margin-left: 50px;
+	background-repeat: no-repeat;
+	background-position: left top;
+	float: left;
+}
+.login_church_name {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-style: normal;
+	color: #FFF;
+	float: right;
+	width: 400px;
+	margin-right: 50px;
+	margin-top: 100px;
+	text-align: right;
+	padding: 0px;
+    
+}
+.login_box {
+	font-family: Tahoma;
+	font-size: 12px;
+	font-style: normal;
+	background-color: #FFF;
+	width: 300px;
+	margin-top:0px;
+	float: right;
+	margin-right: 50px;
+	padding: 10px;
+}
+.cognate_logo_sm {
+	background-image: url(../images/cognate_logo.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	height: 35px;
+	width: 98px;
+	margin-top: 2px;
+}
+
+.main_table {
+    width:100%;
+   
+    
+}
+
+.main_div {
+    width:100%;
+    margin-left:10px;
+    overflow:inherit;
+    height:100%;
+    margin-right:10px;
+}
+
+.pagetitle{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: normal;
+	height: 18px;
+	width: auto;
+	float: left;
+	text-align: left;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom:50px;
+	margin-left: 0px;
+	color: #000;
+	padding-top: 5px;
+	padding-right: 0px;
+	padding-left: 5px;
+	padding-bottom: 0px;
+    background-color:#F0F0F0;
+    min-width:100%;
+    height:25px;
+    
+}
+.appWorkspace{
+    background-color:ghostwhite; 
+    padding:10px 10px 10px 10px;
+}
+
+.required {
+    color:#f00;
+   
+}
+
+.table_tr_right{
+    text-align: left;
+    padding :3px 3px 3px 3px;
+    vertical-align: top;
+    width:320px;
+}
+.table_tr_left{
+    text-align: right;
+    padding :3px 3px 3px 3px;
+    vertical-align: top;
+    width:120px;
+}

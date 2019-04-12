@@ -1,0 +1,6 @@
+C:\Users\Kevin\documents\visual studio 2012\Projects\mySmis\mySmisweb\bin\mySmisweb.dll
+C:\Users\Kevin\documents\visual studio 2012\Projects\mySmis\mySmisweb\bin\mySmisweb.pdb
+C:\Users\Kevin\documents\visual studio 2012\Projects\mySmis\mySmisweb\obj\Debug\mySmisweb.csprojResolveAssemblyReference.cache
+C:\Users\Kevin\documents\visual studio 2012\Projects\mySmis\mySmisweb\obj\Debug\mySmisweb.dll.licenses
+C:\Users\Kevin\documents\visual studio 2012\Projects\mySmis\mySmisweb\obj\Debug\mySmisweb.dll
+C:\Users\Kevin\documents\visual studio 2012\Projects\mySmis\mySmisweb\obj\Debug\mySmisweb.pdb

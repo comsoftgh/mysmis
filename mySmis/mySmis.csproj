@@ -1,0 +1,1793 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A9AB4BBE-9C2F-4E05-8A78-BC292D4B2BEB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>mySmis</RootNamespace>
+    <AssemblyName>mySmis</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Dashboard.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.Resources.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Dashboard.v16.1.Web, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Map.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxGauges.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxPivotGrid.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxRichEdit.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxScheduler.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxThemes.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v16.1.Presets, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v16.1.Win, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraMap.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.CodeParser.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v16.1.Web, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.EnterpriseServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="abcclass.aspx" />
+    <Content Include="abclesson.aspx" />
+    <Content Include="abcprogram.aspx" />
+    <Content Include="academicattendance.aspx" />
+    <Content Include="academicsexams.aspx" />
+    <Content Include="academicsinterimassessment.aspx" />
+    <Content Include="academicstranscripts.aspx" />
+    <Content Include="adminfeesrevenuedashboard.aspx" />
+    <Content Include="adminstudentpopulationdashboard.aspx" />
+    <Content Include="admintutordashboard.aspx" />
+    <Content Include="assets\bootstrap-colorpicker\css\colorpicker.css" />
+    <Content Include="assets\bootstrap-colorpicker\img\alpha.png" />
+    <Content Include="assets\bootstrap-colorpicker\img\hue.png" />
+    <Content Include="assets\bootstrap-colorpicker\img\saturation.png" />
+    <Content Include="assets\bootstrap-colorpicker\js\bootstrap-colorpicker.js" />
+    <Content Include="assets\bootstrap-datepicker\css\datepicker.css" />
+    <Content Include="assets\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="assets\bootstrap-daterangepicker\date.js" />
+    <Content Include="assets\bootstrap-daterangepicker\daterangepicker.css" />
+    <Content Include="assets\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="assets\bootstrap-timepicker\compiled\timepicker.css" />
+    <Content Include="assets\bootstrap-timepicker\js\bootstrap-timepicker.js" />
+    <Content Include="assets\bootstrap-toggle-buttons\static\js\jquery.toggle.buttons.js" />
+    <Content Include="assets\bootstrap-toggle-buttons\static\stylesheets\bootstrap-toggle-buttons.css" />
+    <Content Include="assets\bootstrap-wizard\jquery.bootstrap.wizard.min.js" />
+    <Content Include="assets\bootstrap-wysihtml5\bootstrap-wysihtml5.css" />
+    <Content Include="assets\bootstrap-wysihtml5\bootstrap-wysihtml5.js" />
+    <Content Include="assets\bootstrap-wysihtml5\wysihtml5-0.3.0.js" />
+    <Content Include="assets\bootstrap\css\bootstrap-fileupload.css" />
+    <Content Include="assets\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="assets\bootstrap\css\bootstrap.min.css" />
+    <Content Include="assets\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="assets\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="assets\bootstrap\js\bootstrap-fileupload.js" />
+    <Content Include="assets\bootstrap\js\bootstrap.min.js" />
+    <Content Include="assets\breakpoints\breakpoints.js" />
+    <Content Include="assets\chosen-bootstrap\chosen\chosen-sprite.png" />
+    <Content Include="assets\chosen-bootstrap\chosen\chosen.css" />
+    <Content Include="assets\chosen-bootstrap\chosen\chosen.jquery.min.js" />
+    <Content Include="assets\ckeditor\ckeditor.js" />
+    <Content Include="assets\ckeditor\config.js" />
+    <Content Include="assets\ckeditor\plugins\icons.png" />
+    <Content Include="assets\ckeditor\styles.js" />
+    <Content Include="assets\clockface\css\clockface.css" />
+    <Content Include="assets\clockface\js\clockface.js" />
+    <Content Include="assets\css\metro.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\style_default.css" />
+    <Content Include="assets\css\style_responsive.css" />
+    <Content Include="assets\data-tables\DT_bootstrap.css" />
+    <Content Include="assets\data-tables\DT_bootstrap.js" />
+    <Content Include="assets\data-tables\images\sort_asc.png" />
+    <Content Include="assets\data-tables\images\sort_both.png" />
+    <Content Include="assets\data-tables\images\sort_desc.png" />
+    <Content Include="assets\data-tables\jquery.dataTables.js" />
+    <Content Include="assets\fancybox\source\blank.gif" />
+    <Content Include="assets\fancybox\source\fancybox_loading.gif" />
+    <Content Include="assets\fancybox\source\fancybox_overlay.png" />
+    <Content Include="assets\fancybox\source\fancybox_sprite.png" />
+    <Content Include="assets\fancybox\source\jquery.fancybox.css" />
+    <Content Include="assets\fancybox\source\jquery.fancybox.pack.js" />
+    <Content Include="assets\flot\jquery.flot.crosshair.js" />
+    <Content Include="assets\flot\jquery.flot.js" />
+    <Content Include="assets\flot\jquery.flot.pie.js" />
+    <Content Include="assets\flot\jquery.flot.resize.js" />
+    <Content Include="assets\flot\jquery.flot.stack.js" />
+    <Content Include="assets\font-awesome\css\font-awesome.css" />
+    <Content Include="assets\fullcalendar\fullcalendar\bootstrap-fullcalendar.css" />
+    <Content Include="assets\fullcalendar\fullcalendar\fullcalendar.min.js" />
+    <Content Include="assets\gritter\css\jquery.gritter.css" />
+    <Content Include="assets\gritter\images\gritter-light.png" />
+    <Content Include="assets\gritter\images\gritter.png" />
+    <Content Include="assets\gritter\images\ie-spacer.gif" />
+    <Content Include="assets\gritter\js\jquery.gritter.js" />
+    <Content Include="assets\img\avatar.png" />
+    <Content Include="assets\img\avatar1.jpg" />
+    <Content Include="assets\img\avatar1_small.jpg" />
+    <Content Include="assets\img\avatar2.jpg" />
+    <Content Include="assets\img\avatar3.jpg" />
+    <Content Include="assets\img\gallery\image1.jpg" />
+    <Content Include="assets\img\gallery\image1.png" />
+    <Content Include="assets\img\gallery\image10.png" />
+    <Content Include="assets\img\gallery\image11.png" />
+    <Content Include="assets\img\gallery\image12.png" />
+    <Content Include="assets\img\gallery\image13.png" />
+    <Content Include="assets\img\gallery\image14.png" />
+    <Content Include="assets\img\gallery\image15.png" />
+    <Content Include="assets\img\gallery\image2.jpg" />
+    <Content Include="assets\img\gallery\image2.png" />
+    <Content Include="assets\img\gallery\image3.jpg" />
+    <Content Include="assets\img\gallery\image3.png" />
+    <Content Include="assets\img\gallery\image4.jpg" />
+    <Content Include="assets\img\gallery\image4.png" />
+    <Content Include="assets\img\gallery\image5.png" />
+    <Content Include="assets\img\gallery\image6.png" />
+    <Content Include="assets\img\gallery\image7.png" />
+    <Content Include="assets\img\gallery\image8.png" />
+    <Content Include="assets\img\gallery\image9.png" />
+    <Content Include="assets\img\loading.gif" />
+    <Content Include="assets\img\logo-big.png" />
+    <Content Include="assets\img\logo.png" />
+    <Content Include="assets\img\menu-toggler.png" />
+    <Content Include="assets\img\overlay-icon.png" />
+    <Content Include="assets\img\portlet-collapse-icon-white.png" />
+    <Content Include="assets\img\portlet-collapse-icon.png" />
+    <Content Include="assets\img\portlet-config-icon-white.png" />
+    <Content Include="assets\img\portlet-config-icon.png" />
+    <Content Include="assets\img\portlet-expand-icon-white.png" />
+    <Content Include="assets\img\portlet-expand-icon.png" />
+    <Content Include="assets\img\portlet-reload-icon-white.png" />
+    <Content Include="assets\img\portlet-reload-icon.png" />
+    <Content Include="assets\img\portlet-remove-icon-white.png" />
+    <Content Include="assets\img\portlet-remove-icon.png" />
+    <Content Include="assets\img\remove-icon-small.png" />
+    <Content Include="assets\img\search-icon.png" />
+    <Content Include="assets\img\sidebar-menu-arrow.png" />
+    <Content Include="assets\img\syncfusion-icons-white.png" />
+    <Content Include="assets\img\syncfusion-icons.png" />
+    <Content Include="assets\jquery-slimscroll\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="assets\jquery-slimscroll\jquery-ui-1.9.2.custom.min_16faaa22.js" />
+    <Content Include="assets\jquery-slimscroll\jquery-ui-1.9.2.custom.min_a2e8e22c.js" />
+    <Content Include="assets\jquery-slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="assets\jquery-tags-input\jquery.tagsinput.css" />
+    <Content Include="assets\jquery-tags-input\jquery.tagsinput.min.js" />
+    <Content Include="assets\jqvmap\jqvmap\data\jquery.vmap.sampledata.js" />
+    <Content Include="assets\jqvmap\jqvmap\jquery.vmap.js" />
+    <Content Include="assets\jqvmap\jqvmap\jqvmap.css" />
+    <Content Include="assets\jqvmap\jqvmap\maps\jquery.vmap.europe.js" />
+    <Content Include="assets\jqvmap\jqvmap\maps\jquery.vmap.germany.js" />
+    <Content Include="assets\jqvmap\jqvmap\maps\jquery.vmap.russia.js" />
+    <Content Include="assets\jqvmap\jqvmap\maps\jquery.vmap.usa.js" />
+    <Content Include="assets\jqvmap\jqvmap\maps\jquery.vmap.world.js" />
+    <Content Include="assets\js\app.js" />
+    <Content Include="assets\js\demo.gmaps.js" />
+    <Content Include="assets\js\excanvas.js" />
+    <Content Include="assets\js\gmaps.js" />
+    <Content Include="assets\js\jquery-1.8.3.min.js" />
+    <Content Include="assets\js\jquery-1.8.3.min_5f5b9a1d.js" />
+    <Content Include="assets\js\jquery.blockui.js" />
+    <Content Include="assets\js\jquery.cookie.js" />
+    <Content Include="assets\js\jquery.pulsate.min.js" />
+    <Content Include="assets\js\respond.js" />
+    <Content Include="assets\uniform\css\uniform.default.css" />
+    <Content Include="assets\uniform\images\bg-input-focus.png" />
+    <Content Include="assets\uniform\images\bg-input.png" />
+    <Content Include="assets\uniform\images\sprite.png" />
+    <Content Include="assets\uniform\jquery.uniform.min.js" />
+    <Content Include="batchmangemment.aspx" />
+    <Content Include="classScheduler.aspx" />
+    <Content Include="content\Site.css" />
+    <Content Include="content\toastr.css" />
+    <Content Include="content\toastr.min.css" />
+    <Content Include="examinationscheduling.aspx" />
+    <Content Include="examstimetable.aspx" />
+    <Content Include="images\mySmis.png" />
+    <Content Include="images\mysmislogo_icon.ico" />
+    <Content Include="img\css\style.css" />
+    <Content Include="documentviewer.aspx" />
+    <Content Include="events.aspx" />
+    <Content Include="feescategory.aspx" />
+    <Content Include="feeschequeconciliation.aspx" />
+    <Content Include="feespayment.aspx" />
+    <Content Include="feespaymentlist.aspx" />
+    <Content Include="feesshedules.aspx" />
+    <Content Include="feesstudent.aspx" />
+    <Content Include="home.aspx" />
+    <Content Include="images\autofinance.jpg" />
+    <Content Include="images\autoparts.jpg" />
+    <Content Include="images\bg01.png" />
+    <Content Include="images\car-repair.png" />
+    <Content Include="images\carimportation.jpg" />
+    <Content Include="images\default-person.jpg" />
+    <Content Include="images\default-person.png" />
+    <Content Include="images\footer.jpg" />
+    <Content Include="images\grid\Accept.png" />
+    <Content Include="images\grid\Add to basket.png" />
+    <Content Include="images\grid\Add.png" />
+    <Content Include="images\grid\Address book.png" />
+    <Content Include="images\grid\Alarm.png" />
+    <Content Include="images\grid\Anchor.png" />
+    <Content Include="images\grid\Application form.png" />
+    <Content Include="images\grid\Bar chart.png" />
+    <Content Include="images\grid\Basket.png" />
+    <Content Include="images\grid\Bell.png" />
+    <Content Include="images\grid\Best.png" />
+    <Content Include="images\grid\Billboard.png" />
+    <Content Include="images\grid\Bluetooth.png" />
+    <Content Include="images\grid\Bomb.png" />
+    <Content Include="images\grid\Book.png" />
+    <Content Include="images\grid\Bookmark.png" />
+    <Content Include="images\grid\Box.png" />
+    <Content Include="images\grid\Boy.png" />
+    <Content Include="images\grid\Brick house.png" />
+    <Content Include="images\grid\Bricks.png" />
+    <Content Include="images\grid\Brief case.png" />
+    <Content Include="images\grid\Brightness.png" />
+    <Content Include="images\grid\Bubble.png" />
+    <Content Include="images\grid\Buddy.png" />
+    <Content Include="images\grid\Cable.png" />
+    <Content Include="images\grid\Calculator.png" />
+    <Content Include="images\grid\Calendar.png" />
+    <Content Include="images\grid\Call.png" />
+    <Content Include="images\grid\Camera.png" />
+    <Content Include="images\grid\Card file.png" />
+    <Content Include="images\grid\Cash register.png" />
+    <Content Include="images\grid\Cat.png" />
+    <Content Include="images\grid\Certificate.png" />
+    <Content Include="images\grid\Clien list.png" />
+    <Content Include="images\grid\Clipboard.png" />
+    <Content Include="images\grid\Clock.png" />
+    <Content Include="images\grid\Closed door.png" />
+    <Content Include="images\grid\Closed folder.png" />
+    <Content Include="images\grid\Coin.png" />
+    <Content Include="images\grid\Coins.png" />
+    <Content Include="images\grid\Color wheel.png" />
+    <Content Include="images\grid\Comment.png" />
+    <Content Include="images\grid\Comments.png" />
+    <Content Include="images\grid\Company.png" />
+    <Content Include="images\grid\Computer.png" />
+    <Content Include="images\grid\Conference.png" />
+    <Content Include="images\grid\Connect.png" />
+    <Content Include="images\grid\Construction.png" />
+    <Content Include="images\grid\Contrast.png" />
+    <Content Include="images\grid\Control panel.png" />
+    <Content Include="images\grid\Create.png" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Accept.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Add-fav.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Add-user.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Add.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Alert.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Billboard.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Cancel.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Chat.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Close.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Communicate.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Copy.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Cut.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Delete-user.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Delete.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Edit.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Faq.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Fav.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-File-add.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-File-delete.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-File-edit.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-File-info.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-File.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Flag.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Folder-add.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Folder-alert.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Folder-delete.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Folder-fav.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Folder-info.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Folder.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Home.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Info.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Key.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Lock.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Login-in.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Login-out.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Paperclip.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Paste.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Percent.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Pools.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Prohibit.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Refresh.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Remove-fav.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Ruler.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Save.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Search.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Shoppingbag.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Shoppingcart.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Star-empty.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Star-full.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Star-half-full.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Telephone.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Tools.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Unlock.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-User.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Users.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Wheel.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Wheels.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Wrench.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Zoom-in.ico" />
+    <Content Include="images\grid\Custom-Icon-Design-Mini-Zoom-out.ico" />
+    <Content Include="images\grid\Database.png" />
+    <Content Include="images\grid\Date.png" />
+    <Content Include="images\grid\Delete.png" />
+    <Content Include="images\grid\Desktop.png" />
+    <Content Include="images\grid\Diagram.png" />
+    <Content Include="images\grid\Dice.png" />
+    <Content Include="images\grid\Disconnect.png" />
+    <Content Include="images\grid\Discussion.png" />
+    <Content Include="images\grid\Document.png" />
+    <Content Include="images\grid\Documents.png" />
+    <Content Include="images\grid\Dog.png" />
+    <Content Include="images\grid\Dollar.png" />
+    <Content Include="images\grid\Down.png" />
+    <Content Include="images\grid\Download.png" />
+    <Content Include="images\grid\Edit.png" />
+    <Content Include="images\grid\Euro.png" />
+    <Content Include="images\grid\Exit button.png" />
+    <Content Include="images\grid\Exit.png" />
+    <Content Include="images\grid\Favourites.png" />
+    <Content Include="images\grid\Fax.png" />
+    <Content Include="images\grid\Flash drive.png" />
+    <Content Include="images\grid\Flow block.png" />
+    <Content Include="images\grid\Free.png" />
+    <Content Include="images\grid\Friends.png" />
+    <Content Include="images\grid\Full basket.png" />
+    <Content Include="images\grid\Funny.png" />
+    <Content Include="images\grid\Game controller.png" />
+    <Content Include="images\grid\Gear.png" />
+    <Content Include="images\grid\Genealogy.png" />
+    <Content Include="images\grid\Gift.png" />
+    <Content Include="images\grid\Girl.png" />
+    <Content Include="images\grid\Globe.png" />
+    <Content Include="images\grid\grid_add.png" />
+    <Content Include="images\grid\grid_delete.png" />
+    <Content Include="images\grid\grid_edit.png" />
+    <Content Include="images\grid\grid_group.png" />
+    <Content Include="images\grid\grid_person.png" />
+    <Content Include="images\grid\grid_refresh.png" />
+    <Content Include="images\grid\grid_visitor.png" />
+    <Content Include="images\grid\Handshake.png" />
+    <Content Include="images\grid\Happy.png" />
+    <Content Include="images\grid\Hard disk.png" />
+    <Content Include="images\grid\Heart.png" />
+    <Content Include="images\grid\Help.png" />
+    <Content Include="images\grid\Hierarchy.png" />
+    <Content Include="images\grid\Home.png" />
+    <Content Include="images\grid\Hungup.png" />
+    <Content Include="images\grid\Industry.png" />
+    <Content Include="images\grid\Info.png" />
+    <Content Include="images\grid\Key.png" />
+    <Content Include="images\grid\Label.png" />
+    <Content Include="images\grid\Left.png" />
+    <Content Include="images\grid\Lego brick.png" />
+    <Content Include="images\grid\Letter.png" />
+    <Content Include="images\grid\List.png" />
+    <Content Include="images\grid\Lists.png" />
+    <Content Include="images\grid\Lock.png" />
+    <Content Include="images\grid\Log out.png" />
+    <Content Include="images\grid\Login.png" />
+    <Content Include="images\grid\Mail.png" />
+    <Content Include="images\grid\Microsoft.png" />
+    <Content Include="images\grid\Mobile phone.png" />
+    <Content Include="images\grid\Money.png" />
+    <Content Include="images\grid\Monitor.png" />
+    <Content Include="images\grid\Mouse.png" />
+    <Content Include="images\grid\Music.png" />
+    <Content Include="images\grid\No.png" />
+    <Content Include="images\grid\Notes.png" />
+    <Content Include="images\grid\Numbered list.png" />
+    <Content Include="images\grid\OK.png" />
+    <Content Include="images\grid\Online.png" />
+    <Content Include="images\grid\Open door.png" />
+    <Content Include="images\grid\Open file.png" />
+    <Content Include="images\grid\Open folder.png" />
+    <Content Include="images\grid\Open letter.png" />
+    <Content Include="images\grid\Open lock.png" />
+    <Content Include="images\grid\Payment.png" />
+    <Content Include="images\grid\Peace.png" />
+    <Content Include="images\grid\Pets.png" />
+    <Content Include="images\grid\Phone.png" />
+    <Content Include="images\grid\Piggy bank.png" />
+    <Content Include="images\grid\Piggy.png" />
+    <Content Include="images\grid\Pointer.png" />
+    <Content Include="images\grid\Pound.png" />
+    <Content Include="images\grid\Price list.png" />
+    <Content Include="images\grid\Print preview.png" />
+    <Content Include="images\grid\Print.png" />
+    <Content Include="images\grid\Printer.png" />
+    <Content Include="images\grid\Problem.png" />
+    <Content Include="images\grid\Properties.png" />
+    <Content Include="images\grid\Red star.png" />
+    <Content Include="images\grid\Refresh.png" />
+    <Content Include="images\grid\Remove from basket.png" />
+    <Content Include="images\grid\Report.png" />
+    <Content Include="images\grid\Right.png" />
+    <Content Include="images\grid\Rouble.png" />
+    <Content Include="images\grid\RSS.png" />
+    <Content Include="images\grid\Sad.png" />
+    <Content Include="images\grid\Safe.png" />
+    <Content Include="images\grid\Save as.png" />
+    <Content Include="images\grid\Save.png" />
+    <Content Include="images\grid\Scroll list.png" />
+    <Content Include="images\grid\Search.png" />
+    <Content Include="images\grid\Shield.png" />
+    <Content Include="images\grid\Smile.png" />
+    <Content Include="images\grid\Software.png" />
+    <Content Include="images\grid\Statistics.png" />
+    <Content Include="images\grid\Stop.png" />
+    <Content Include="images\grid\Task list.png" />
+    <Content Include="images\grid\Telephone.png" />
+    <Content Include="images\grid\Text.png" />
+    <Content Include="images\grid\Tick.png" />
+    <Content Include="images\grid\To do list.png" />
+    <Content Include="images\grid\Trash.png" />
+    <Content Include="images\grid\Unknown person.png" />
+    <Content Include="images\grid\Unlock.png" />
+    <Content Include="images\grid\Unordered list.png" />
+    <Content Include="images\grid\Up.png" />
+    <Content Include="images\grid\Upload.png" />
+    <Content Include="images\grid\User group.png" />
+    <Content Include="images\grid\User.png" />
+    <Content Include="images\grid\Users.png" />
+    <Content Include="images\grid\Wallet.png" />
+    <Content Include="images\grid\Warning.png" />
+    <Content Include="images\grid\Weather.png" />
+    <Content Include="images\grid\Wireless.png" />
+    <Content Include="images\grid\Wizard.png" />
+    <Content Include="images\grid\Yen.png" />
+    <Content Include="images\grid\Yin-Yang.png" />
+    <Content Include="images\grid\Zoom in.png" />
+    <Content Include="images\grid\Zoom out.png" />
+    <Content Include="images\grid\Zoom.png" />
+    <Content Include="images\header.jpg" />
+    <Content Include="images\homepage-banner.jpg" />
+    <Content Include="images\icon_members.png" />
+    <Content Include="images\icon_tithe.png" />
+    <Content Include="images\letterhead.jpg" />
+    <Content Include="images\mnu_covfamily.png" />
+    <Content Include="images\mnu_covfamreport.png" />
+    <Content Include="images\mnu_group.png" />
+    <Content Include="images\mnu_members.png" />
+    <Content Include="images\mnu_newmember.png" />
+    <Content Include="images\mnu_tithe.png" />
+    <Content Include="images\mnu_tithestmt.png" />
+    <Content Include="images\mnu_user.png" />
+    <Content Include="images\mnu_visitor.png" />
+    <Content Include="images\servicecentre.png" />
+    <Content Include="images\themes\Aqua.png" />
+    <Content Include="images\themes\Blackglass.png" />
+    <Content Include="images\themes\DevEx.png" />
+    <Content Include="images\themes\Glass.png" />
+    <Content Include="images\themes\iOS.png" />
+    <Content Include="images\themes\Metropolis.png" />
+    <Content Include="images\themes\MetropolisBlue.png" />
+    <Content Include="images\themes\Office2003Blue.png" />
+    <Content Include="images\themes\Office2003Olive.png" />
+    <Content Include="images\themes\Office2003Silver.png" />
+    <Content Include="images\themes\Office2010Black.png" />
+    <Content Include="images\themes\Office2010Blue.png" />
+    <Content Include="images\themes\Office2010Silver.png" />
+    <Content Include="images\themes\PlasticBlue.png" />
+    <Content Include="images\themes\RedWine.png" />
+    <Content Include="images\themes\SoftOrange.png" />
+    <Content Include="images\themes\Youthful.png" />
+    <Content Include="img\apps\container-box.gif" />
+    <Content Include="img\apps\pcp-box.gif" />
+    <Content Include="img\apps\pd-box.gif" />
+    <Content Include="img\apps\pdfwl-box.gif" />
+    <Content Include="img\apps\poa-box.gif" />
+    <Content Include="img\apps\server-box.gif" />
+    <Content Include="img\btn.png" />
+    <Content Include="img\bullet.gif" />
+    <Content Include="img\globe.png" />
+    <Content Include="img\icons\aspdotnet.png" />
+    <Content Include="img\icons\fail.png" />
+    <Content Include="img\icons\fastcgi.png" />
+    <Content Include="img\icons\ok.png" />
+    <Content Include="img\icons\perl.png" />
+    <Content Include="img\icons\php.png" />
+    <Content Include="img\icons\python.png" />
+    <Content Include="img\icons\ssi.png" />
+    <Content Include="img\p-box.png" />
+    <Content Include="img\panel-logo.png" />
+    <Content Include="img\parallels-logo.png" />
+    <Content Include="img\th.png" />
+    <Content Include="img\top-bottom.png" />
+    <Content Include="lectureblocks.aspx" />
+    <Content Include="lessonattendance.aspx" />
+    <Content Include="lessoninstructor.aspx" />
+    <Content Include="lessonsScheduler.aspx" />
+    <Content Include="lessontimetable.aspx" />
+    <Content Include="default.aspx" />
+    <Content Include="libbookauthor.aspx" />
+    <Content Include="libbookborrow.aspx" />
+    <Content Include="libbookborrowing.aspx" />
+    <Content Include="libbookcataloguing.aspx" />
+    <Content Include="libbookclassification.aspx" />
+    <Content Include="libbookpublisher.aspx" />
+    <Content Include="logout.aspx" />
+    <Content Include="myaccount.aspx" />
+    <Content Include="myauditlog.aspx" />
+    <Content Include="parentdashboard.aspx" />
+    <Content Include="Scripts\Demo.js" />
+    <Content Include="settingsacademics.aspx" />
+    <Content Include="settingsgeneral.aspx" />
+    <Content Include="settingsstudent.aspx" />
+    <Content Include="settingstutor.aspx" />
+    <Content Include="studentdashboard.aspx" />
+    <Content Include="studentlist.aspx" />
+    <Content Include="studentnew.aspx" />
+    <Content Include="picstaff\img_14.jpg" />
+    <Content Include="pictures\img_1.jpg" />
+    <Content Include="pictures\img_1000.jpg" />
+    <Content Include="pictures\img_1001.jpg" />
+    <Content Include="pictures\img_1002.jpg" />
+    <Content Include="pictures\img_1004.jpg" />
+    <Content Include="content\toastr.less" />
+    <Content Include="content\toastr.scss" />
+    <Content Include="parent.Master" />
+    <Content Include="admintutor.Master" />
+    <Content Include="assets\font-awesome\font\fontawesome-webfont.eot" />
+    <Content Include="assets\font-awesome\font\fontawesome-webfont.ttf" />
+    <Content Include="assets\font-awesome\font\fontawesome-webfont.woff" />
+    <Content Include="assets\font-awesome\font\fontawesome-webfont_162a16fe.eot" />
+    <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
+    <Content Include="programregistration.aspx" />
+    <Content Include="Scripts\jquery-1.6.4.js" />
+    <Content Include="Scripts\jquery-1.6.4.min.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
+    <Content Include="studentregistration.aspx" />
+    <Content Include="styles\global.css" />
+    <Content Include="styles\icons.css" />
+    <Content Include="styles\jquery-1.11.0.min.js" />
+    <Content Include="styles\uikit\addons\css\datepicker.almost-flat.css" />
+    <Content Include="styles\uikit\addons\css\datepicker.almost-flat.min.css" />
+    <Content Include="styles\uikit\addons\css\datepicker.css" />
+    <Content Include="styles\uikit\addons\css\datepicker.gradient.css" />
+    <Content Include="styles\uikit\addons\css\datepicker.gradient.min.css" />
+    <Content Include="styles\uikit\addons\css\datepicker.min.css" />
+    <Content Include="styles\uikit\addons\css\form-file.css" />
+    <Content Include="styles\uikit\addons\css\form-file.min.css" />
+    <Content Include="styles\uikit\addons\css\form-password.almost-flat.css" />
+    <Content Include="styles\uikit\addons\css\form-password.almost-flat.min.css" />
+    <Content Include="styles\uikit\addons\css\form-password.css" />
+    <Content Include="styles\uikit\addons\css\form-password.gradient.css" />
+    <Content Include="styles\uikit\addons\css\form-password.gradient.min.css" />
+    <Content Include="styles\uikit\addons\css\form-password.min.css" />
+    <Content Include="styles\uikit\addons\css\markdownarea.almost-flat.css" />
+    <Content Include="styles\uikit\addons\css\markdownarea.almost-flat.min.css" />
+    <Content Include="styles\uikit\addons\css\markdownarea.css" />
+    <Content Include="styles\uikit\addons\css\markdownarea.gradient.css" />
+    <Content Include="styles\uikit\addons\css\markdownarea.gradient.min.css" />
+    <Content Include="styles\uikit\addons\css\markdownarea.min.css" />
+    <Content Include="styles\uikit\addons\css\notify.almost-flat.css" />
+    <Content Include="styles\uikit\addons\css\notify.almost-flat.min.css" />
+    <Content Include="styles\uikit\addons\css\notify.css" />
+    <Content Include="styles\uikit\addons\css\notify.gradient.css" />
+    <Content Include="styles\uikit\addons\css\notify.gradient.min.css" />
+    <Content Include="styles\uikit\addons\css\notify.min.css" />
+    <Content Include="styles\uikit\addons\css\sortable.almost-flat.css" />
+    <Content Include="styles\uikit\addons\css\sortable.almost-flat.min.css" />
+    <Content Include="styles\uikit\addons\css\sortable.css" />
+    <Content Include="styles\uikit\addons\css\sortable.gradient.css" />
+    <Content Include="styles\uikit\addons\css\sortable.gradient.min.css" />
+    <Content Include="styles\uikit\addons\css\sortable.min.css" />
+    <Content Include="styles\uikit\addons\js\datepicker.js" />
+    <Content Include="styles\uikit\addons\js\datepicker.min.js" />
+    <Content Include="styles\uikit\addons\js\form-file.js" />
+    <Content Include="styles\uikit\addons\js\form-file.min.js" />
+    <Content Include="styles\uikit\addons\js\form-password.js" />
+    <Content Include="styles\uikit\addons\js\form-password.min.js" />
+    <Content Include="styles\uikit\addons\js\markdownarea.js" />
+    <Content Include="styles\uikit\addons\js\markdownarea.min.js" />
+    <Content Include="styles\uikit\addons\js\notify.js" />
+    <Content Include="styles\uikit\addons\js\notify.min.js" />
+    <Content Include="styles\uikit\addons\js\sortable.js" />
+    <Content Include="styles\uikit\addons\js\sortable.min.js" />
+    <Content Include="styles\uikit\addons\js\sticky.js" />
+    <Content Include="styles\uikit\addons\js\sticky.min.js" />
+    <Content Include="styles\uikit\addons\js\timepicker.js" />
+    <Content Include="styles\uikit\addons\js\timepicker.min.js" />
+    <Content Include="styles\uikit\css\uikit.almost-flat.css" />
+    <Content Include="styles\uikit\css\uikit.almost-flat.min.css" />
+    <Content Include="styles\uikit\css\uikit.css" />
+    <Content Include="styles\uikit\css\uikit.gradient.css" />
+    <Content Include="styles\uikit\css\uikit.gradient.min.css" />
+    <Content Include="styles\uikit\css\uikit.min.css" />
+    <Content Include="styles\uikit\js\uikit.js" />
+    <Content Include="styles\uikit\js\uikit.min.js" />
+    <Content Include="teachingstaffdashboard.aspx" />
+    <Content Include="teachingstafflist.aspx" />
+    <Content Include="test\aspnet\test.aspx" />
+    <Content Include="test\aspnet\trace_info.aspx" />
+    <Content Include="test\asp\test_mail.asp" />
+    <Content Include="test\asp\test_msaccess.asp" />
+    <Content Include="test\asp\test_mssql.asp" />
+    <Content Include="test\asp\test_mysql.asp" />
+    <Content Include="test\coldfusion\test.html" />
+    <Content Include="test\perl\test.html" />
+    <Content Include="test\php\test.html" />
+    <Content Include="test\python\test.html" />
+    <Content Include="trainingtutors.aspx" />
+    <Content Include="tutorexams.aspx" />
+    <Content Include="tutorsinterimassessment.aspx" />
+    <Content Include="tutortimetable.aspx" />
+    <Content Include="upload.aspx" />
+    <Content Include="userprivillages.aspx" />
+    <Content Include="users.aspx" />
+    <Content Include="usersadministrator.aspx" />
+    <Content Include="usersparent.aspx" />
+    <Content Include="usersstudent.aspx" />
+    <Content Include="userstutor.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="abcclass.aspx.cs">
+      <DependentUpon>abcclass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="abcclass.aspx.designer.cs">
+      <DependentUpon>abcclass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="abclesson.aspx.cs">
+      <DependentUpon>abclesson.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="abclesson.aspx.designer.cs">
+      <DependentUpon>abclesson.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="abcprogram.aspx.cs">
+      <DependentUpon>abcprogram.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="abcprogram.aspx.designer.cs">
+      <DependentUpon>abcprogram.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="academicattendance.aspx.cs">
+      <DependentUpon>academicattendance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="academicattendance.aspx.designer.cs">
+      <DependentUpon>academicattendance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="academicsexams.aspx.cs">
+      <DependentUpon>academicsexams.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="academicsexams.aspx.designer.cs">
+      <DependentUpon>academicsexams.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="academicsinterimassessment.aspx.cs">
+      <DependentUpon>academicsinterimassessment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="academicsinterimassessment.aspx.designer.cs">
+      <DependentUpon>academicsinterimassessment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="academicstranscripts.aspx.cs">
+      <DependentUpon>academicstranscripts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="academicstranscripts.aspx.designer.cs">
+      <DependentUpon>academicstranscripts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminfeesrevenuedashboard.aspx.cs">
+      <DependentUpon>adminfeesrevenuedashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminfeesrevenuedashboard.aspx.designer.cs">
+      <DependentUpon>adminfeesrevenuedashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminstudentpopulationdashboard.aspx.cs">
+      <DependentUpon>adminstudentpopulationdashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminstudentpopulationdashboard.aspx.designer.cs">
+      <DependentUpon>adminstudentpopulationdashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admintutor.Master.cs">
+      <DependentUpon>admintutor.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admintutor.Master.designer.cs">
+      <DependentUpon>admintutor.Master</DependentUpon>
+    </Compile>
+    <Compile Include="admintutordashboard.aspx.cs">
+      <DependentUpon>admintutordashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admintutordashboard.aspx.designer.cs">
+      <DependentUpon>admintutordashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="batchmangemment.aspx.cs">
+      <DependentUpon>batchmangemment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="batchmangemment.aspx.designer.cs">
+      <DependentUpon>batchmangemment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="classScheduler.aspx.cs">
+      <DependentUpon>classScheduler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="classScheduler.aspx.designer.cs">
+      <DependentUpon>classScheduler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Code\MessagingService.cs" />
+    <Compile Include="Code\SessionManager.cs" />
+    <Compile Include="documentviewer.aspx.cs">
+      <DependentUpon>documentviewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="documentviewer.aspx.designer.cs">
+      <DependentUpon>documentviewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="events.aspx.cs">
+      <DependentUpon>events.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="events.aspx.designer.cs">
+      <DependentUpon>events.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="examinationscheduling.aspx.cs">
+      <DependentUpon>examinationscheduling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="examinationscheduling.aspx.designer.cs">
+      <DependentUpon>examinationscheduling.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="examstimetable.aspx.cs">
+      <DependentUpon>examstimetable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="examstimetable.aspx.designer.cs">
+      <DependentUpon>examstimetable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="feescategory.aspx.cs">
+      <DependentUpon>feescategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="feescategory.aspx.designer.cs">
+      <DependentUpon>feescategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="feeschequeconciliation.aspx.cs">
+      <DependentUpon>feeschequeconciliation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="feeschequeconciliation.aspx.designer.cs">
+      <DependentUpon>feeschequeconciliation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="feespayment.aspx.cs">
+      <DependentUpon>feespayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="feespayment.aspx.designer.cs">
+      <DependentUpon>feespayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="feespaymentlist.aspx.cs">
+      <DependentUpon>feespaymentlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="feespaymentlist.aspx.designer.cs">
+      <DependentUpon>feespaymentlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="feesshedules.aspx.cs">
+      <DependentUpon>feesshedules.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="feesshedules.aspx.designer.cs">
+      <DependentUpon>feesshedules.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="feesstudent.aspx.cs">
+      <DependentUpon>feesstudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="feesstudent.aspx.designer.cs">
+      <DependentUpon>feesstudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lectureblocks.aspx.cs">
+      <DependentUpon>lectureblocks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lectureblocks.aspx.designer.cs">
+      <DependentUpon>lectureblocks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lessonattendance.aspx.cs">
+      <DependentUpon>lessonattendance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lessonattendance.aspx.designer.cs">
+      <DependentUpon>lessonattendance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lessoninstructor.aspx.cs">
+      <DependentUpon>lessoninstructor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lessoninstructor.aspx.designer.cs">
+      <DependentUpon>lessoninstructor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lessonsScheduler.aspx.cs">
+      <DependentUpon>lessonsScheduler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lessonsScheduler.aspx.designer.cs">
+      <DependentUpon>lessonsScheduler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lessontimetable.aspx.cs">
+      <DependentUpon>lessontimetable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lessontimetable.aspx.designer.cs">
+      <DependentUpon>lessontimetable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="libbookauthor.aspx.cs">
+      <DependentUpon>libbookauthor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="libbookauthor.aspx.designer.cs">
+      <DependentUpon>libbookauthor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="libbookborrow.aspx.cs">
+      <DependentUpon>libbookborrow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="libbookborrow.aspx.designer.cs">
+      <DependentUpon>libbookborrow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="libbookborrowing.aspx.cs">
+      <DependentUpon>libbookborrowing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="libbookborrowing.aspx.designer.cs">
+      <DependentUpon>libbookborrowing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="libbookcataloguing.aspx.cs">
+      <DependentUpon>libbookcataloguing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="libbookcataloguing.aspx.designer.cs">
+      <DependentUpon>libbookcataloguing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="libbookclassification.aspx.cs">
+      <DependentUpon>libbookclassification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="libbookclassification.aspx.designer.cs">
+      <DependentUpon>libbookclassification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="libbookpublisher.aspx.cs">
+      <DependentUpon>libbookpublisher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="libbookpublisher.aspx.designer.cs">
+      <DependentUpon>libbookpublisher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="main.Master.cs">
+      <DependentUpon>main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main.Master.designer.cs">
+      <DependentUpon>main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="myaccount.aspx.cs">
+      <DependentUpon>myaccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="myaccount.aspx.designer.cs">
+      <DependentUpon>myaccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="myauditlog.aspx.cs">
+      <DependentUpon>myauditlog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="myauditlog.aspx.designer.cs">
+      <DependentUpon>myauditlog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="parent.Master.cs">
+      <DependentUpon>parent.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="parent.Master.designer.cs">
+      <DependentUpon>parent.Master</DependentUpon>
+    </Compile>
+    <Compile Include="parentdashboard.aspx.cs">
+      <DependentUpon>parentdashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="parentdashboard.aspx.designer.cs">
+      <DependentUpon>parentdashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rptAcademicBatch.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\rptAcademicBatch.Designer.cs">
+      <DependentUpon>rptAcademicBatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rptCoursesSubjects.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\rptCoursesSubjects.Designer.cs">
+      <DependentUpon>rptCoursesSubjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rptCourseSubjectSchedule.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\rptCourseSubjectSchedule.Designer.cs">
+      <DependentUpon>rptCourseSubjectSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rptCourseSubjectTutor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\rptCourseSubjectTutor.Designer.cs">
+      <DependentUpon>rptCourseSubjectTutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rptFeesCategory.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\rptFeesCategory.Designer.cs">
+      <DependentUpon>rptFeesCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rptFeesPayments.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\rptFeesPayments.Designer.cs">
+      <DependentUpon>rptFeesPayments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rptFeesReceipt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\rptFeesReceipt.Designer.cs">
+      <DependentUpon>rptFeesReceipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rptFeesSlip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\rptFeesSlip.Designer.cs">
+      <DependentUpon>rptFeesSlip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rptProgramsLevels.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\rptProgramsLevels.Designer.cs">
+      <DependentUpon>rptProgramsLevels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rptSchsDpts.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\rptSchsDpts.Designer.cs">
+      <DependentUpon>rptSchsDpts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rptStudentProfile.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\rptStudentProfile.Designer.cs">
+      <DependentUpon>rptStudentProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rptSubRelatives.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\rptSubRelatives.Designer.cs">
+      <DependentUpon>rptSubRelatives.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rptSubStudentAcademics.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\rptSubStudentAcademics.Designer.cs">
+      <DependentUpon>rptSubStudentAcademics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rptSubTutorAcademics.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\rptSubTutorAcademics.Designer.cs">
+      <DependentUpon>rptSubTutorAcademics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rptSubTutorFamily.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\rptSubTutorFamily.Designer.cs">
+      <DependentUpon>rptSubTutorFamily.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rptTimeTable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\rptTimeTable.Designer.cs">
+      <DependentUpon>rptTimeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reports\rptTutorProfile.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\rptTutorProfile.Designer.cs">
+      <DependentUpon>rptTutorProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="settingsacademics.aspx.cs">
+      <DependentUpon>settingsacademics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="settingsacademics.aspx.designer.cs">
+      <DependentUpon>settingsacademics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="settingsgeneral.aspx.cs">
+      <DependentUpon>settingsgeneral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="settingsgeneral.aspx.designer.cs">
+      <DependentUpon>settingsgeneral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="settingsstudent.aspx.cs">
+      <DependentUpon>settingsstudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="settingsstudent.aspx.designer.cs">
+      <DependentUpon>settingsstudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="settingstutor.aspx.cs">
+      <DependentUpon>settingstutor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="settingstutor.aspx.designer.cs">
+      <DependentUpon>settingstutor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student.Master.cs">
+      <DependentUpon>student.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student.Master.designer.cs">
+      <DependentUpon>student.Master</DependentUpon>
+    </Compile>
+    <Compile Include="studentdashboard.aspx.cs">
+      <DependentUpon>studentdashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="studentdashboard.aspx.designer.cs">
+      <DependentUpon>studentdashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="studentlist.aspx.cs">
+      <DependentUpon>studentlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="studentlist.aspx.designer.cs">
+      <DependentUpon>studentlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="studentnew.aspx.cs">
+      <DependentUpon>studentnew.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="studentnew.aspx.designer.cs">
+      <DependentUpon>studentnew.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="programregistration.aspx.cs">
+      <DependentUpon>programregistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="programregistration.aspx.designer.cs">
+      <DependentUpon>programregistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="studentregistration.aspx.cs">
+      <DependentUpon>studentregistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="studentregistration.aspx.designer.cs">
+      <DependentUpon>studentregistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="teachingstaffdashboard.aspx.cs">
+      <DependentUpon>teachingstaffdashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="teachingstaffdashboard.aspx.designer.cs">
+      <DependentUpon>teachingstaffdashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="teachingstafflist.aspx.cs">
+      <DependentUpon>teachingstafflist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="teachingstafflist.aspx.designer.cs">
+      <DependentUpon>teachingstafflist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="trainingtutors.aspx.cs">
+      <DependentUpon>trainingtutors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="trainingtutors.aspx.designer.cs">
+      <DependentUpon>trainingtutors.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tutor.Master.cs">
+      <DependentUpon>tutor.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tutor.Master.designer.cs">
+      <DependentUpon>tutor.Master</DependentUpon>
+    </Compile>
+    <Compile Include="tutorexams.aspx.cs">
+      <DependentUpon>tutorexams.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tutorexams.aspx.designer.cs">
+      <DependentUpon>tutorexams.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tutorsinterimassessment.aspx.cs">
+      <DependentUpon>tutorsinterimassessment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tutorsinterimassessment.aspx.designer.cs">
+      <DependentUpon>tutorsinterimassessment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tutortimetable.aspx.cs">
+      <DependentUpon>tutortimetable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tutortimetable.aspx.designer.cs">
+      <DependentUpon>tutortimetable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="upload.aspx.cs">
+      <DependentUpon>upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="upload.aspx.designer.cs">
+      <DependentUpon>upload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="userprivillages.aspx.cs">
+      <DependentUpon>userprivillages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userprivillages.aspx.designer.cs">
+      <DependentUpon>userprivillages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="users.aspx.cs">
+      <DependentUpon>users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="users.aspx.designer.cs">
+      <DependentUpon>users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="usersadministrator.aspx.cs">
+      <DependentUpon>usersadministrator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usersadministrator.aspx.designer.cs">
+      <DependentUpon>usersadministrator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="usersparent.aspx.cs">
+      <DependentUpon>usersparent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usersparent.aspx.designer.cs">
+      <DependentUpon>usersparent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="usersstudent.aspx.cs">
+      <DependentUpon>usersstudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usersstudent.aspx.designer.cs">
+      <DependentUpon>usersstudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="userstutor.aspx.cs">
+      <DependentUpon>userstutor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="userstutor.aspx.designer.cs">
+      <DependentUpon>userstutor.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="main.Master" />
+    <Content Include="styles\uikit\fonts\fontawesome-webfont.eot" />
+    <Content Include="styles\uikit\fonts\fontawesome-webfont.ttf" />
+    <Content Include="styles\uikit\fonts\fontawesome-webfont.woff" />
+    <Content Include="styles\uikit\fonts\FontAwesome.otf" />
+    <Content Include="test\coldfusion\test.cfm" />
+    <Content Include="test\perl\test.pl" />
+    <Content Include="test\php\test.php" />
+    <Content Include="test\python\test.py" />
+    <Content Include="student.Master" />
+    <Content Include="tutor.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="reports\rptAcademicBatch.resx">
+      <DependentUpon>rptAcademicBatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\rptCoursesSubjects.resx">
+      <DependentUpon>rptCoursesSubjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\rptCourseSubjectSchedule.resx">
+      <DependentUpon>rptCourseSubjectSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\rptCourseSubjectTutor.resx">
+      <DependentUpon>rptCourseSubjectTutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\rptFeesCategory.resx">
+      <DependentUpon>rptFeesCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\rptFeesPayments.resx">
+      <DependentUpon>rptFeesPayments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\rptFeesReceipt.resx">
+      <DependentUpon>rptFeesReceipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\rptFeesSlip.resx">
+      <DependentUpon>rptFeesSlip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\rptProgramsLevels.resx">
+      <DependentUpon>rptProgramsLevels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\rptSchsDpts.resx">
+      <DependentUpon>rptSchsDpts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\rptStudentProfile.resx">
+      <DependentUpon>rptStudentProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\rptSubRelatives.resx">
+      <DependentUpon>rptSubRelatives.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\rptSubStudentAcademics.resx">
+      <DependentUpon>rptSubStudentAcademics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\rptSubTutorAcademics.resx">
+      <DependentUpon>rptSubTutorAcademics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\rptSubTutorFamily.resx">
+      <DependentUpon>rptSubTutorFamily.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\rptTimeTable.resx">
+      <DependentUpon>rptTimeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\rptTutorProfile.resx">
+      <DependentUpon>rptTutorProfile.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\UploadTemp\" />
+    <Folder Include="assets\components\admin_contacts\" />
+    <Folder Include="assets\components\admin_courses\" />
+    <Folder Include="assets\components\admin_email\" />
+    <Folder Include="assets\components\admin_employees\" />
+    <Folder Include="assets\components\admin_error\" />
+    <Folder Include="assets\components\admin_events\" />
+    <Folder Include="assets\components\admin_finances\" />
+    <Folder Include="assets\components\admin_invoice\" />
+    <Folder Include="assets\components\admin_landing\" />
+    <Folder Include="assets\components\admin_lock_screen\" />
+    <Folder Include="assets\components\admin_login\" />
+    <Folder Include="assets\components\admin_medical\" />
+    <Folder Include="assets\components\admin_menus\" />
+    <Folder Include="assets\components\admin_messages\" />
+    <Folder Include="assets\components\admin_news\" />
+    <Folder Include="assets\components\admin_notifications_gritter\" />
+    <Folder Include="assets\components\admin_notifications_notyfy\" />
+    <Folder Include="assets\components\admin_page-tour\" />
+    <Folder Include="assets\components\admin_profile\" />
+    <Folder Include="assets\components\admin_projects\" />
+    <Folder Include="assets\components\admin_ratings\" />
+    <Folder Include="assets\components\admin_shop\" />
+    <Folder Include="assets\components\admin_surveys\" />
+    <Folder Include="assets\components\admin_tickets\" />
+    <Folder Include="assets\components\admin_timeline\" />
+    <Folder Include="assets\components\calendar\" />
+    <Folder Include="assets\components\charts_easy_pie\" />
+    <Folder Include="assets\components\charts_flot\" />
+    <Folder Include="assets\components\charts_sparkline\" />
+    <Folder Include="assets\components\core\" />
+    <Folder Include="assets\components\core_ajaxify\" />
+    <Folder Include="assets\components\core_docs\assets\angular\controllers\" />
+    <Folder Include="assets\components\core_docs\assets\angular\directives\" />
+    <Folder Include="assets\components\core_docs\assets\angular\filters\" />
+    <Folder Include="assets\components\core_docs\docs\assets\angular\app\" />
+    <Folder Include="assets\components\core_docs\docs\assets\angular\directives\" />
+    <Folder Include="assets\components\core_docs\docs\assets\less\" />
+    <Folder Include="assets\components\core_helpers\template-options\assets\js\" />
+    <Folder Include="assets\components\core_helpers\template-options\assets\less\" />
+    <Folder Include="assets\components\core_helpers\themer\assets\js\" />
+    <Folder Include="assets\components\core_helpers\themer\assets\less\" />
+    <Folder Include="assets\components\core_helpers\themer\assets\plugins\cookie\" />
+    <Folder Include="assets\components\core_helpers\themer\assets\plugins\minicolors\" />
+    <Folder Include="assets\components\core_medical\" />
+    <Folder Include="assets\components\core_preload\" />
+    <Folder Include="assets\components\forms_editors_wysihtml5\" />
+    <Folder Include="assets\components\forms_elements_bootstrap-datepicker\" />
+    <Folder Include="assets\components\forms_elements_bootstrap-select\" />
+    <Folder Include="assets\components\forms_elements_bootstrap-switch\" />
+    <Folder Include="assets\components\forms_elements_bootstrap-timepicker\" />
+    <Folder Include="assets\components\forms_elements_button-states\" />
+    <Folder Include="assets\components\forms_elements_colorpicker-farbtastic\" />
+    <Folder Include="assets\components\forms_elements_fuelux-checkbox\" />
+    <Folder Include="assets\components\forms_elements_fuelux-radio\" />
+    <Folder Include="assets\components\forms_elements_inputmask\" />
+    <Folder Include="assets\components\forms_elements_multiselect\" />
+    <Folder Include="assets\components\forms_elements_select2\" />
+    <Folder Include="assets\components\forms_elements_uniform\" />
+    <Folder Include="assets\components\forms_file_dropzone\" />
+    <Folder Include="assets\components\forms_file_plupload\" />
+    <Folder Include="assets\components\forms_validator\" />
+    <Folder Include="assets\components\forms_wizards\" />
+    <Folder Include="assets\components\front_activities\" />
+    <Folder Include="assets\components\front_blog\" />
+    <Folder Include="assets\components\front_contact\" />
+    <Folder Include="assets\components\front_core\" />
+    <Folder Include="assets\components\front_header\" />
+    <Folder Include="assets\components\front_lists\" />
+    <Folder Include="assets\components\front_navbar\" />
+    <Folder Include="assets\components\front_shop\" />
+    <Folder Include="assets\components\front_tables_pricing\" />
+    <Folder Include="assets\components\front_tabs\" />
+    <Folder Include="assets\components\front_team\" />
+    <Folder Include="assets\components\front_testimonials\" />
+    <Folder Include="assets\components\guides\getting-started-html\" />
+    <Folder Include="assets\components\maps_google\" />
+    <Folder Include="assets\components\maps_vector\" />
+    <Folder Include="assets\components\media_blueimp\" />
+    <Folder Include="assets\components\media_carousels\" />
+    <Folder Include="assets\components\media_gridalicious\" />
+    <Folder Include="assets\components\media_image-crop\" />
+    <Folder Include="assets\components\media_prettyphoto\" />
+    <Folder Include="assets\components\other_infinite-scroll\" />
+    <Folder Include="assets\components\other_parallax\" />
+    <Folder Include="assets\components\realestate_carousel\" />
+    <Folder Include="assets\components\realestate_core\" />
+    <Folder Include="assets\components\realestate_forms\" />
+    <Folder Include="assets\components\realestate_map\" />
+    <Folder Include="assets\components\realestate_navbar\" />
+    <Folder Include="assets\components\realestate_tables\" />
+    <Folder Include="assets\components\shop_core\" />
+    <Folder Include="assets\components\shop_navbar\" />
+    <Folder Include="assets\components\shop_owl-carousel\" />
+    <Folder Include="assets\components\shop_testimonials\" />
+    <Folder Include="assets\components\tables\" />
+    <Folder Include="assets\components\tables_datatables\css\" />
+    <Folder Include="assets\components\tables_datatables\images\" />
+    <Folder Include="assets\components\tables_datatables\js\" />
+    <Folder Include="assets\components\tables_datatables\less\" />
+    <Folder Include="assets\components\tables_pricing\" />
+    <Folder Include="assets\components\tables_responsive\" />
+    <Folder Include="assets\components\ui_alerts\" />
+    <Folder Include="assets\components\ui_breadcrumb\" />
+    <Folder Include="assets\components\ui_buttons\" />
+    <Folder Include="assets\components\ui_forms\" />
+    <Folder Include="assets\components\ui_labels\" />
+    <Folder Include="assets\components\ui_media\" />
+    <Folder Include="assets\components\ui_menubar\" />
+    <Folder Include="assets\components\ui_modals\" />
+    <Folder Include="assets\components\ui_pagination\" />
+    <Folder Include="assets\components\ui_popovers\" />
+    <Folder Include="assets\components\ui_progress-bars\" />
+    <Folder Include="assets\components\ui_ribbons\" />
+    <Folder Include="assets\components\ui_sliders_jqueryui\" />
+    <Folder Include="assets\components\ui_sliders_range\" />
+    <Folder Include="assets\components\ui_tabs\" />
+    <Folder Include="assets\components\ui_tooltips\" />
+    <Folder Include="assets\components\widget_accordions\" />
+    <Folder Include="assets\components\widget_activity\" />
+    <Folder Include="assets\components\widget_analytics\" />
+    <Folder Include="assets\components\widget_chat\" />
+    <Folder Include="assets\components\widget_collapsible\" />
+    <Folder Include="assets\components\widget_generic\" />
+    <Folder Include="assets\components\widget_lists\" />
+    <Folder Include="assets\components\widget_offer\" />
+    <Folder Include="assets\components\widget_pinterest\" />
+    <Folder Include="assets\components\widget_progress\" />
+    <Folder Include="assets\components\widget_scrollable\" />
+    <Folder Include="assets\components\widget_social\" />
+    <Folder Include="assets\components\widget_stats\" />
+    <Folder Include="assets\components\widget_twitter\" />
+    <Folder Include="assets\components\widget_wells\" />
+    <Folder Include="assets\components\widget_well\" />
+    <Folder Include="assets\css_old\admin\" />
+    <Folder Include="assets\css_old\front\" />
+    <Folder Include="assets\css_old\realestate\" />
+    <Folder Include="assets\css_old\shop\" />
+    <Folder Include="assets\images\fashion\female\" />
+    <Folder Include="assets\images\fashion\male\" />
+    <Folder Include="assets\images\front\" />
+    <Folder Include="assets\images\gallery-2\" />
+    <Folder Include="assets\images\gallery\rs\" />
+    <Folder Include="assets\images\landing\" />
+    <Folder Include="assets\images\lang\" />
+    <Folder Include="assets\images\logo\" />
+    <Folder Include="assets\images\people\100\" />
+    <Folder Include="assets\images\people\250\" />
+    <Folder Include="assets\images\people\35\" />
+    <Folder Include="assets\images\people\500\" />
+    <Folder Include="assets\images\people\50\" />
+    <Folder Include="assets\images\people\775\" />
+    <Folder Include="assets\images\people\80\" />
+    <Folder Include="assets\images\realestate\" />
+    <Folder Include="assets\images\shop\" />
+    <Folder Include="assets\less\admin\" />
+    <Folder Include="assets\less\front\" />
+    <Folder Include="assets\less\realestate\" />
+    <Folder Include="assets\less\shop\" />
+    <Folder Include="assets\library\angular\" />
+    <Folder Include="assets\library\animate\" />
+    <Folder Include="assets\library\bootstrap\css\" />
+    <Folder Include="assets\library\bootstrap\fonts\" />
+    <Folder Include="assets\library\bootstrap\js\" />
+    <Folder Include="assets\library\icons\fontawesome\assets\css\" />
+    <Folder Include="assets\library\icons\fontawesome\assets\fonts\" />
+    <Folder Include="assets\library\icons\glyphicons\assets\css\" />
+    <Folder Include="assets\library\icons\glyphicons\assets\fonts\glyphicons_filetypes\" />
+    <Folder Include="assets\library\icons\glyphicons\assets\fonts\glyphicons_regular\" />
+    <Folder Include="assets\library\icons\glyphicons\assets\fonts\glyphicons_social\" />
+    <Folder Include="assets\library\icons\glyphicons\assets\less\" />
+    <Folder Include="assets\library\icons\pictoicons\css\" />
+    <Folder Include="assets\library\icons\pictoicons\fonts\" />
+    <Folder Include="assets\library\jquery-ui\css\images\" />
+    <Folder Include="assets\library\jquery-ui\js\" />
+    <Folder Include="assets\library\jquery\" />
+    <Folder Include="assets\library\modernizr\" />
+    <Folder Include="assets\plugins\calendar_fullcalendar\css\" />
+    <Folder Include="assets\plugins\calendar_fullcalendar\js\" />
+    <Folder Include="assets\plugins\charts_easy_pie\css\" />
+    <Folder Include="assets\plugins\charts_easy_pie\js\" />
+    <Folder Include="assets\plugins\charts_flot\plugins\" />
+    <Folder Include="assets\plugins\charts_sparkline\" />
+    <Folder Include="assets\plugins\core_ajaxify_davis\" />
+    <Folder Include="assets\plugins\core_ajaxify_lazyjaxdavis\" />
+    <Folder Include="assets\plugins\core_ajaxify_loadscript\" />
+    <Folder Include="assets\plugins\core_beautify\" />
+    <Folder Include="assets\plugins\core_breakpoints\" />
+    <Folder Include="assets\plugins\core_browser\html5shiv\" />
+    <Folder Include="assets\plugins\core_browser\ie\" />
+    <Folder Include="assets\plugins\core_browser\json\" />
+    <Folder Include="assets\plugins\core_hotkeys\" />
+    <Folder Include="assets\plugins\core_jquery-ui-touch-punch\" />
+    <Folder Include="assets\plugins\core_less-js\" />
+    <Folder Include="assets\plugins\core_mousewheel\" />
+    <Folder Include="assets\plugins\core_nicescroll\" />
+    <Folder Include="assets\plugins\core_preload\" />
+    <Folder Include="assets\plugins\core_prettyprint\css\" />
+    <Folder Include="assets\plugins\core_prettyprint\js\" />
+    <Folder Include="assets\plugins\core_slimscroll\" />
+    <Folder Include="assets\plugins\forms_editors_ckeditor\lang\" />
+    <Folder Include="assets\plugins\forms_editors_ckeditor\plugins\a11yhelp\dialogs\lang\" />
+    <Folder Include="assets\plugins\forms_editors_ckeditor\plugins\about\dialogs\" />
+    <Folder Include="assets\plugins\forms_editors_ckeditor\plugins\clipboard\dialogs\" />
+    <Folder Include="assets\plugins\forms_editors_ckeditor\plugins\dialog\" />
+    <Folder Include="assets\plugins\forms_editors_ckeditor\plugins\fakeobjects\images\" />
+    <Folder Include="assets\plugins\forms_editors_ckeditor\plugins\image\dialogs\" />
+    <Folder Include="assets\plugins\forms_editors_ckeditor\plugins\image\images\" />
+    <Folder Include="assets\plugins\forms_editors_ckeditor\plugins\link\dialogs\" />
+    <Folder Include="assets\plugins\forms_editors_ckeditor\plugins\link\images\" />
+    <Folder Include="assets\plugins\forms_editors_ckeditor\plugins\magicline\images\" />
+    <Folder Include="assets\plugins\forms_editors_ckeditor\plugins\pastefromword\filter\" />
+    <Folder Include="assets\plugins\forms_editors_ckeditor\plugins\scayt\dialogs\" />
+    <Folder Include="assets\plugins\forms_editors_ckeditor\plugins\specialchar\dialogs\lang\" />
+    <Folder Include="assets\plugins\forms_editors_ckeditor\plugins\tabletools\dialogs\" />
+    <Folder Include="assets\plugins\forms_editors_ckeditor\plugins\table\dialogs\" />
+    <Folder Include="assets\plugins\forms_editors_ckeditor\plugins\wsc\dialogs\" />
+    <Folder Include="assets\plugins\forms_editors_ckeditor\skins\moono\images\" />
+    <Folder Include="assets\plugins\forms_editors_wysihtml5\css\" />
+    <Folder Include="assets\plugins\forms_editors_wysihtml5\img\" />
+    <Folder Include="assets\plugins\forms_editors_wysihtml5\js\" />
+    <Folder Include="assets\plugins\forms_elements_bootstrap-datepicker\css\" />
+    <Folder Include="assets\plugins\forms_elements_bootstrap-datepicker\js\locales\" />
+    <Folder Include="assets\plugins\forms_elements_bootstrap-select\css\" />
+    <Folder Include="assets\plugins\forms_elements_bootstrap-select\js\" />
+    <Folder Include="assets\plugins\forms_elements_bootstrap-switch\css\" />
+    <Folder Include="assets\plugins\forms_elements_bootstrap-switch\js\" />
+    <Folder Include="assets\plugins\forms_elements_bootstrap-timepicker\css\" />
+    <Folder Include="assets\plugins\forms_elements_bootstrap-timepicker\js\" />
+    <Folder Include="assets\plugins\forms_elements_colorpicker-farbtastic\css\" />
+    <Folder Include="assets\plugins\forms_elements_colorpicker-farbtastic\js\" />
+    <Folder Include="assets\plugins\forms_elements_inputmask\" />
+    <Folder Include="assets\plugins\forms_elements_jasny-fileupload\css\" />
+    <Folder Include="assets\plugins\forms_elements_jasny-fileupload\js\" />
+    <Folder Include="assets\plugins\forms_elements_multiselect\css\" />
+    <Folder Include="assets\plugins\forms_elements_multiselect\img\" />
+    <Folder Include="assets\plugins\forms_elements_multiselect\js\" />
+    <Folder Include="assets\plugins\forms_elements_select2\css\" />
+    <Folder Include="assets\plugins\forms_elements_select2\js\" />
+    <Folder Include="assets\plugins\forms_elements_uniform\css\" />
+    <Folder Include="assets\plugins\forms_elements_uniform\images\" />
+    <Folder Include="assets\plugins\forms_elements_uniform\js\" />
+    <Folder Include="assets\plugins\forms_file_dropzone\css\" />
+    <Folder Include="assets\plugins\forms_file_dropzone\js\" />
+    <Folder Include="assets\plugins\forms_file_plupload\i18n\" />
+    <Folder Include="assets\plugins\forms_file_plupload\jquery.plupload.queue\css\" />
+    <Folder Include="assets\plugins\forms_validator\jquery-validation\dist\" />
+    <Folder Include="assets\plugins\forms_validator\jquery-validation\localization\" />
+    <Folder Include="assets\plugins\forms_wizards\" />
+    <Folder Include="assets\plugins\maps_google\jquery-ui-map\addons\markerclustererplus\" />
+    <Folder Include="assets\plugins\maps_google\jquery-ui-map\data\" />
+    <Folder Include="assets\plugins\maps_google\jquery-ui-map\ui\min\" />
+    <Folder Include="assets\plugins\maps_vector\css\" />
+    <Folder Include="assets\plugins\maps_vector\data\" />
+    <Folder Include="assets\plugins\maps_vector\maps\" />
+    <Folder Include="assets\plugins\media_blueimp\css\" />
+    <Folder Include="assets\plugins\media_blueimp\img\" />
+    <Folder Include="assets\plugins\media_blueimp\js\" />
+    <Folder Include="assets\plugins\media_gridalicious\" />
+    <Folder Include="assets\plugins\media_holder\" />
+    <Folder Include="assets\plugins\media_image-crop\css\" />
+    <Folder Include="assets\plugins\media_image-crop\js\" />
+    <Folder Include="assets\plugins\media_image-preview\" />
+    <Folder Include="assets\plugins\media_owl-carousel\" />
+    <Folder Include="assets\plugins\media_prettyphoto\css\" />
+    <Folder Include="assets\plugins\media_prettyphoto\images\prettyPhoto\dark_rounded\" />
+    <Folder Include="assets\plugins\media_prettyphoto\images\prettyPhoto\dark_square\" />
+    <Folder Include="assets\plugins\media_prettyphoto\images\prettyPhoto\default\" />
+    <Folder Include="assets\plugins\media_prettyphoto\images\prettyPhoto\facebook\" />
+    <Folder Include="assets\plugins\media_prettyphoto\images\prettyPhoto\light_rounded\" />
+    <Folder Include="assets\plugins\media_prettyphoto\images\prettyPhoto\light_square\" />
+    <Folder Include="assets\plugins\media_prettyphoto\js\" />
+    <Folder Include="assets\plugins\notifications_gritter\css\" />
+    <Folder Include="assets\plugins\notifications_gritter\images\" />
+    <Folder Include="assets\plugins\notifications_gritter\js\" />
+    <Folder Include="assets\plugins\notifications_notyfy\css\" />
+    <Folder Include="assets\plugins\notifications_notyfy\js\" />
+    <Folder Include="assets\plugins\other_appear\" />
+    <Folder Include="assets\plugins\other_infinite-scroll\" />
+    <Folder Include="assets\plugins\other_mixitup\" />
+    <Folder Include="assets\plugins\other_page-tour\css\" />
+    <Folder Include="assets\plugins\other_page-tour\img\tlyguide\" />
+    <Folder Include="assets\plugins\other_page-tour\js\" />
+    <Folder Include="assets\plugins\other_parallax_stellar\" />
+    <Folder Include="assets\plugins\other_parallax_waypoints\" />
+    <Folder Include="assets\plugins\tables_datatables\css\" />
+    <Folder Include="assets\plugins\tables_datatables\extras\ColReorder\media\css\" />
+    <Folder Include="assets\plugins\tables_datatables\extras\ColReorder\media\images\" />
+    <Folder Include="assets\plugins\tables_datatables\extras\ColReorder\media\js\" />
+    <Folder Include="assets\plugins\tables_datatables\extras\ColVis\media\css\" />
+    <Folder Include="assets\plugins\tables_datatables\extras\ColVis\media\images\" />
+    <Folder Include="assets\plugins\tables_datatables\extras\ColVis\media\js\" />
+    <Folder Include="assets\plugins\tables_datatables\extras\FixedHeader\" />
+    <Folder Include="assets\plugins\tables_datatables\extras\TableTools\media\as3\lib\" />
+    <Folder Include="assets\plugins\tables_datatables\extras\TableTools\media\css\" />
+    <Folder Include="assets\plugins\tables_datatables\extras\TableTools\media\images\" />
+    <Folder Include="assets\plugins\tables_datatables\extras\TableTools\media\js\" />
+    <Folder Include="assets\plugins\tables_datatables\extras\TableTools\media\swf\" />
+    <Folder Include="assets\plugins\tables_datatables\js\" />
+    <Folder Include="assets\plugins\tables_responsive\css\fonts\" />
+    <Folder Include="assets\plugins\tables_responsive\js\" />
+    <Folder Include="assets\plugins\ui_modals\" />
+    <Folder Include="assets\plugins\ui_pagination\" />
+    <Folder Include="assets\plugins\ui_sliders_range_jqrangeslider\css\" />
+    <Folder Include="assets\plugins\ui_sliders_range_jqrangeslider\js\" />
+    <Folder Include="assets\plugins\ui_sliders_range_mousewheel\" />
+    <Folder Include="dashboard\" />
+    <Folder Include="picstudent\" />
+    <Folder Include="pictutor\" />
+    <Folder Include="studentedudocs\" />
+    <Folder Include="tutoredudoc\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\mySmisLib\mySmisLib.csproj">
+      <Project>{477673fd-8688-475c-a3f2-42ce2f10ce88}</Project>
+      <Name>mySmisLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1056/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
