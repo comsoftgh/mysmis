@@ -3,7 +3,7 @@
 <%@ Register Assembly="DevExpress.Web.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="ContentHolder">
-    <div class="Separator Pagetitle">
+	<div class="Separator Pagetitle">
         PROGRAMS/LEVELS
     </div>
 
@@ -33,7 +33,7 @@
                     <tr>
                         <td class="table_tr_left" >&nbsp;</td>
                         <td class="table_tr_right">
-                            <dx:ASPxTextBox ID="txtIdfgfgdfgdfgdf" runat="server" Visible="False" Width="50px" Text="0">
+                            <dx:ASPxTextBox ID="txtId" runat="server" Visible="False" Width="50px" Text="0">
                             </dx:ASPxTextBox>
                         </td>
                     </tr>
