@@ -1387,6 +1387,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="reports\rptAcademicBatch.resx">
       <DependentUpon>rptAcademicBatch.cs</DependentUpon>
     </EmbeddedResource>

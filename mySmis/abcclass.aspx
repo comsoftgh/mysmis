@@ -31,7 +31,7 @@
             <div id="divClasses" runat="server" visible="false" class="appWorkspace">
                 <table style="width: 80%;">
                     <tr>
-                        <td class="table_tr_left" >&nbsp;</td>
+                        <td class="table_tr_left" >&nbsp; asjcjasdjdfffffcc</td>
                         <td class="table_tr_right">
                             <dx:ASPxTextBox ID="txtId" runat="server" Visible="False" Width="50px" Text="0">
                             </dx:ASPxTextBox>
